@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於平台 - Minic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- 頂部導航欄 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-brain"></i> Minic
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">關於</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#explore">探索</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#share">分享</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/#add-database">
+                        <i class="fas fa-plus"></i> 新增資料庫
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容區域 -->
+    <div class="container-fluid py-4">
+        <!-- 頁面標題 -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-4 mb-3">關於 Minic 平台</h1>
+                <p class="lead">臺北醫學大學神經學研究資料庫平台</p>
+            </div>
+        </div>
+
+        <!-- 平台介紹 -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3><i class="fas fa-info-circle"></i> 平台概述</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="lead mb-4">
+                                    本網站由「臺北醫學大學」經營，專為收集與整合神經科學及神經外科相關的臨床與研究資料而設計。
+                                </p>
+                                <p class="mb-3">
+                                    資料平台涵蓋神經內科與神經外科領域，彙集自台北醫學大學體系內三家附設醫院（北醫附醫、萬芳醫院、雙和醫院）之臨床案例、研究數據、影像檔案及多面向醫療資訊。所有資料經嚴格去識別化與主題分類，依據不同神經系統疾病、臨床需求與研究領域進行整理，提供合規的資料申請、下載、探索與主題式分享。
+                                </p>
+                                <p class="mb-3">
+                                    網站的核心理念在於促進神經醫學研究、教學與臨床之資源共享，並支持院內外研究人員進行跨領域與跨機構合作。其資料共享與服務模式仿效國際PhysioNet平台，強調開放協作、數據可再利用，藉由集結神經內外科豐富的臨床與研究資源，助力台灣神經醫學與神經外科發展。
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="mb-4">
+                                        <i class="fas fa-hospital fa-4x text-primary mb-3"></i>
+                                        <h5>三家附設醫院</h5>
+                                        <p class="text-muted">北醫附醫、萬芳醫院、雙和醫院</p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <i class="fas fa-brain fa-4x text-success mb-3"></i>
+                                        <h5>神經科學領域</h5>
+                                        <p class="text-muted">神經內科與神經外科</p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <i class="fas fa-shield-alt fa-4x text-warning mb-3"></i>
+                                        <h5>資料安全</h5>
+                                        <p class="text-muted">嚴格去識別化處理</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 平台特色 -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4 text-center">平台特色</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-body text-center">
+                                <i class="fas fa-database fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">豐富的資料資源</h5>
+                                <p class="card-text">整合三家附設醫院的臨床案例、研究數據、影像檔案等多面向醫療資訊，提供完整的神經科學研究資料。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-success">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">促進研究合作</h5>
+                                <p class="card-text">支持院內外研究人員進行跨領域與跨機構合作，共同推進神經醫學研究發展。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-warning">
+                            <div class="card-body text-center">
+                                <i class="fas fa-lock fa-3x text-warning mb-3"></i>
+                                <h5 class="card-title">嚴格的資料安全</h5>
+                                <p class="card-text">所有資料經過嚴格去識別化處理，確保患者隱私保護，符合研究倫理規範。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 資料來源 -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h3><i class="fas fa-hospital"></i> 資料來源</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-building fa-3x text-primary mb-3"></i>
+                                    <h5>北醫附醫</h5>
+                                    <p class="text-muted">台北醫學大學附設醫院</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-hospital fa-3x text-success mb-3"></i>
+                                    <h5>萬芳醫院</h5>
+                                    <p class="text-muted">台北醫學大學萬芳醫院</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-clinic-medical fa-3x text-warning mb-3"></i>
+                                    <h5>雙和醫院</h5>
+                                    <p class="text-muted">台北醫學大學雙和醫院</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 研究領域 -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h3><i class="fas fa-microscope"></i> 研究領域</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-brain text-primary"></i> 神經內科</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>阿茲海默症與失智症</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>帕金森氏症</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>腦中風</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>癲癇</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>多發性硬化症</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-user-md text-primary"></i> 神經外科</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>腦腫瘤</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>腦血管疾病</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>脊椎疾病</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>創傷性腦損傷</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>功能性神經外科</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 聯絡資訊 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h3><i class="fas fa-envelope"></i> 聯絡資訊</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>平台管理</h5>
+                                <p><i class="fas fa-envelope me-2"></i>neurology@tmu.edu.tw</p>
+                                <p><i class="fas fa-phone me-2"></i>+886-2-2736-1661</p>
+                                <p><i class="fas fa-map-marker-alt me-2"></i>臺北市信義區吳興街250號</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>技術支援</h5>
+                                <p><i class="fas fa-code me-2"></i>資料庫技術問題</p>
+                                <p><i class="fas fa-download me-2"></i>資料下載協助</p>
+                                <p><i class="fas fa-question-circle me-2"></i>使用說明諮詢</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="footer bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Minic</h5>
+                    <p>臺北醫學大學神經學研究資料庫平台</p>
+                    <p class="text-muted">整合多個神經學研究資料庫，促進神經科學研究發展</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>探索</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/#data">資料庫</a></li>
+                        <li><a href="/#software">軟體</a></li>
+                        <li><a href="/#tutorials">教學</a></li>
+                        <li><a href="/#challenges">挑戰</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>聯絡資訊</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope"></i> neurology@tmu.edu.tw</li>
+                        <li><i class="fas fa-phone"></i> +886-2-2736-1661</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 臺北市信義區吳興街250號</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 臺北醫學大學 神經學研究資料庫平台 | 參考 <a href="https://physionet.org/" target="_blank">PhysioNet</a> 設計，品牌為 Minic</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

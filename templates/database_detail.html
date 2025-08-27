@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ database.title }} - Minic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- 頂部導航欄 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-brain"></i> Minic
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about">關於</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#explore">探索</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容區域 -->
+    <div class="container-fluid py-4">
+        <!-- 資料庫標題和作者 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="resource-header mb-3">
+                    <span class="badge bg-primary me-2">{{ database.type }}</span>
+                    <span class="badge bg-{{ 'success' if database.access == 'open' else 'warning' }}">
+                        {{ '開放存取' if database.access == 'open' else '限制存取' }}
+                    </span>
+                </div>
+                <h1 class="display-4 mb-3">{{ database.title }}</h1>
+                <p class="lead mb-2">{{ database.authors }}</p>
+                <p class="text-muted mb-3">
+                    發布日期: {{ database.published_date }} | 版本: {{ database.version }}
+                </p>
+            </div>
+        </div>
+
+        <!-- 引用資訊 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-quote-right"></i> 引用此資源時，請引用：</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="citation-box p-3 mb-3">
+                            <h6>APA 格式</h6>
+                            <p>{{ database.citation_apa }}</p>
+                        </div>
+                        <div class="citation-box p-3 mb-3">
+                            <h6>MLA 格式</h6>
+                            <p>{{ database.citation_mla }}</p>
+                        </div>
+                        <div class="citation-box p-3 mb-3">
+                            <h6>Chicago 格式</h6>
+                            <p>{{ database.citation_chicago }}</p>
+                        </div>
+                        <div class="citation-box p-3 mb-3">
+                            <h6>Harvard 格式</h6>
+                            <p>{{ database.citation_harvard }}</p>
+                        </div>
+                        <div class="citation-box p-3">
+                            <h6>Vancouver 格式</h6>
+                            <p>{{ database.citation_vancouver }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要內容區域 -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <!-- 摘要 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-info-circle"></i> 摘要</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.abstract }}</p>
+                    </div>
+                </div>
+
+                <!-- 背景 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-book"></i> 背景</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.background }}</p>
+                    </div>
+                </div>
+
+                <!-- 方法 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-cogs"></i> 方法</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.methods }}</p>
+                    </div>
+                </div>
+
+                <!-- 資料描述 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-database"></i> 資料描述</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.data_description }}</p>
+                        
+                        {% if database.data_files %}
+                        <h6 class="mt-3">資料檔案：</h6>
+                        <ul class="list-group">
+                            {% for file in database.data_files %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <i class="fas fa-file-csv text-primary"></i> {{ file.name }}
+                                </span>
+                                <span class="badge bg-info rounded-pill">{{ file.records }} 筆記錄</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- 使用說明 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-user-guide"></i> 使用說明</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.usage_notes }}</p>
+                    </div>
+                </div>
+
+                <!-- 發布說明 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-code-branch"></i> 發布說明</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.release_notes }}</p>
+                    </div>
+                </div>
+
+                <!-- 倫理 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-balance-scale"></i> 倫理</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.ethics }}</p>
+                    </div>
+                </div>
+
+                <!-- 致謝 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-heart"></i> 致謝</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.acknowledgements }}</p>
+                    </div>
+                </div>
+
+                <!-- 利益衝突 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-exclamation-triangle"></i> 利益衝突</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ database.conflicts_of_interest }}</p>
+                    </div>
+                </div>
+
+                <!-- 參考文獻 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-book-open"></i> 參考文獻</h5>
+                    </div>
+                    <div class="card-body">
+                        <ol>
+                            {% for reference in database.references %}
+                            <li class="mb-3">
+                                {% if 'https://' in reference %}
+                                    {% set parts = reference.split('https://') %}
+                                    {% set text_part = parts[0] %}
+                                    {% set url_part = 'https://' + parts[1] %}
+                                    {{ text_part }}<a href="{{ url_part }}" target="_blank" class="text-decoration-none ms-1">
+                                        <i class="fas fa-external-link-alt"></i> 查看論文
+                                    </a>
+                                {% else %}
+                                    {{ reference }}
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- 存取 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-key"></i> 存取</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>存取政策：</strong></p>
+                        <p>{{ database.access_policy }}</p>
+                        
+                        <p><strong>授權 (檔案)：</strong></p>
+                        <p>{{ database.license }}</p>
+                    </div>
+                </div>
+
+                <!-- 發現 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-search"></i> 發現</h5>
+                    </div>
+                    <div class="card-body">
+                        {% if database.doi %}
+                        <p><strong>DOI (最新版本)：</strong></p>
+                        <p><a href="{{ database.doi }}" target="_blank">{{ database.doi }}</a></p>
+                        {% endif %}
+                        
+                        <p><strong>主題：</strong></p>
+                        <div class="mb-2">
+                            {% for topic in database.topics %}
+                            <span class="badge bg-light text-dark me-1">{{ topic }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        {% if database.project_website %}
+                        <p><strong>專案網站：</strong></p>
+                        <p><a href="{{ database.project_website }}" target="_blank">{{ database.project_website }}</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- 檔案 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-folder"></i> 檔案</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>總未壓縮大小: {{ database.total_size }}.</p>
+                        
+                        <h6>存取檔案</h6>
+                        <div class="mb-3">
+                            <a href="{{ database.download_url }}" class="btn btn-primary btn-sm w-100 mb-2">
+                                <i class="fas fa-download"></i> 下載 ZIP 檔案 ({{ database.zip_size }})
+                            </a>
+                        </div>
+                        
+                        <p>使用終端機下載檔案：</p>
+                        <pre class="bg-light p-2"><code>{{ database.wget_command }}</code></pre>
+                        
+                        {% if database.aws_command %}
+                        <p class="mt-2">使用 AWS 命令列工具下載檔案，請先配置您的 AWS 憑證。</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- 版本 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-tags"></i> 版本</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            {% for version in database.versions %}
+                            <li class="mb-1">
+                                <strong>{{ version.number }}</strong> - {{ version.date }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 分享 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h5><i class="fas fa-share-alt"></i> 分享</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-primary btn-sm" onclick="shareOnTwitter()">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm" onclick="shareOnFacebook()">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm" onclick="shareOnLinkedIn()">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="footer bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Minic</h5>
+                    <p>臺北醫學大學神經學研究資料庫平台</p>
+                    <p class="text-muted">整合多個神經學研究資料庫，促進神經科學研究發展</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>探索</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/#data">資料庫</a></li>
+                        <li><a href="/#software">軟體</a></li>
+                        <li><a href="/#tutorials">教學</a></li>
+                        <li><a href="/#challenges">挑戰</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>聯絡資訊</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope"></i> neurology@tmu.edu.tw</li>
+                        <li><i class="fas fa-phone"></i> +886-2-2736-1661</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 臺北市信義區吳興街250號</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 臺北醫學大學 神經學研究資料庫平台 | 參考 <a href="https://physionet.org/" target="_blank">PhysioNet</a> 設計</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function shareOnTwitter() {
+            const text = "{{ database.title }} - 臺北醫學大學神經學研究資料庫平台";
+            const url = window.location.href;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
+        }
+
+        function shareOnFacebook() {
+            const url = window.location.href;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+        }
+
+        function shareOnLinkedIn() {
+            const url = window.location.href;
+            const title = "{{ database.title }}";
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minic - 臺北醫學大學 神經學研究資料庫平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- 頂部導航欄 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-brain"></i> Minic
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">關於</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#explore">探索</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#share">分享</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#add-database">
+                        <i class="fas fa-plus"></i> 新增資料庫
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容區域 -->
+    <div class="container-fluid py-4">
+        <!-- 標題和搜尋區域 -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-4 mb-3">臺北醫學大學 神經學研究資料庫平台</h1>
+                <p class="lead mb-4">整合多個神經學研究資料庫，提供研究人員資料存取、分析工具和合作平台</p>
+                
+                <!-- 搜尋表單 -->
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form class="d-flex" id="searchForm">
+                            <input class="form-control form-control-lg me-2" type="search" placeholder="搜尋資料庫..." aria-label="Search" id="searchInput">
+                            <button class="btn btn-primary btn-lg" type="submit">
+                                <i class="fas fa-search"></i> 搜尋
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 篩選和排序區域 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h5 class="mb-3">資源類型</h5>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="data" id="dataCheck" checked>
+                                            <label class="form-check-label" for="dataCheck">
+                                                <i class="fas fa-database"></i> 資料庫
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="software" id="softwareCheck">
+                                            <label class="form-check-label" for="softwareCheck">
+                                                <i class="fas fa-code"></i> 軟體
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="tutorial" id="tutorialCheck">
+                                            <label class="form-check-label" for="tutorialCheck">
+                                                <i class="fas fa-graduation-cap"></i> 教學
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="challenge" id="challengeCheck">
+                                            <label class="form-check-label" for="challengeCheck">
+                                                <i class="fas fa-trophy"></i> 挑戰
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="mb-3">存取權限</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="open" id="openCheck" checked>
+                                    <label class="form-check-label" for="openCheck">
+                                        <i class="fas fa-unlock"></i> 開放存取
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="restricted" id="restrictedCheck">
+                                    <label class="form-check-label" for="restrictedCheck">
+                                        <i class="fas fa-lock"></i> 限制存取
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="mb-3">排序方式</h5>
+                                <select class="form-select" id="sortSelect">
+                                    <option value="relevance">相關性</option>
+                                    <option value="latest">最新</option>
+                                    <option value="oldest">最舊</option>
+                                    <option value="title_asc">標題 (升序)</option>
+                                    <option value="title_desc">標題 (降序)</option>
+                                    <option value="size_asc">大小 (升序)</option>
+                                    <option value="size_desc">大小 (降序)</option>
+                                </select>
+                                <button class="btn btn-primary mt-2 w-100" id="applyFilters">
+                                    <i class="fas fa-filter"></i> 套用篩選
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 資源列表 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="mb-4">資源</h2>
+                
+                <!-- 臺灣失智症臨床資料庫 -->
+                <div class="card mb-4 resource-card" data-type="data" data-access="open">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="resource-header mb-2">
+                                    <span class="badge bg-primary me-2">資料庫</span>
+                                    <span class="badge bg-success">開放存取</span>
+                                </div>
+                                <h3 class="resource-title">
+                                    <a href="/database/dementia" class="text-decoration-none">臺灣失智症臨床資料庫</a>
+                                </h3>
+                                <p class="resource-authors mb-2">
+                                    <strong>臺北醫學大學雙和醫院失智症中心與神經內科研究團隊</strong>
+                                </p>
+                                <p class="resource-description">
+                                    這項研究採用臺北醫學大學雙和醫院失智症中心與神經內科的受試者資料，建立了以阿茲海默症患者為核心的臨床資料庫。該資料庫收錄符合美國國家老化研究院-阿茲海默症協會(NIA-AA)標準的疑似AD患者，收集的內容包含病歷、神經心理評估（如MMSE、CASI、CDR）、持續多年的追蹤數據及部分患者的腦部MRI影像。所有數據經過嚴格去識別化處理，並遵照研究倫理規範，包含人口統計、病程、教育年數、神經心理多領域測驗分數、臨床失智嚴重度、腦萎縮與白質病灶評分等詳細變項。
+                                </p>
+                                <p class="resource-description">
+                                    該資料庫的患者涵蓋輕至中度阿茲海默症，具備多次年度評估紀錄與完整隨訪資料。研究團隊將神經心理評估各面向結合機器學習方法進行異質性分類，促進亞型分群分析。這樣的資料庫可應用於阿茲海默症異質性研究、疾病進展模式分析、個體化治療標的開發與跨中心橫斷及縱貫研究協作，是台灣區域極具代表性且結構嚴謹的失智症臨床資料資源。
+                                </p>
+                                <div class="resource-tags mb-2">
+                                    <span class="badge bg-light text-dark me-1">阿茲海默症</span>
+                                    <span class="badge bg-light text-dark me-1">神經心理評估</span>
+                                    <span class="badge bg-light text-dark me-1">MMSE</span>
+                                    <span class="badge bg-light text-dark me-1">CASI</span>
+                                    <span class="badge bg-light text-dark me-1">CDR</span>
+                                    <span class="badge bg-light text-dark me-1">腦部MRI</span>
+                                    <span class="badge bg-light text-dark me-1">機器學習</span>
+                                    <span class="badge bg-light text-dark me-1">異質性分析</span>
+                                </div>
+                                <div class="resource-publications mb-3">
+                                    <h6 class="text-primary mb-2">
+                                        <i class="fas fa-file-alt"></i> 相關研究論文
+                                    </h6>
+                                    <div class="publication-item">
+                                        <a href="https://pubmed.ncbi.nlm.nih.gov/37797059/" target="_blank" class="text-decoration-none">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <strong>Heterogeneity of Alzheimer's disease identified by neuropsychological test profiling</strong>
+                                        </a>
+                                        <p class="text-muted small mb-1">
+                                            Nguyen TTT, Lee HH, Huang LK, et al. PLoS One. 2023;18(10):e0292527.
+                                        </p>
+                                        <p class="text-muted small">
+                                            本研究採用神經心理測試分析識別阿茲海默症的異質性，使用機器學習方法進行認知亞型分群分析。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <div class="resource-meta">
+                                    <p class="text-muted mb-1">發布日期: 2025年8月28日</p>
+                                    <p class="text-muted mb-1">版本: 1.0.0</p>
+                                    <p class="text-muted mb-1">資料期間: 2012-2020</p>
+                                    <p class="text-muted mb-1">評估標準: NIA-AA</p>
+                                    <p class="text-muted mb-3">大小: 213.29 KB</p>
+                                    <a href="/download/anonymized_csv.zip" class="btn btn-primary btn-sm me-2">
+                                        <i class="fas fa-download"></i> 下載
+                                    </a>
+                                    <a href="/database/dementia" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-info-circle"></i> 詳細資訊
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 大腦意識資料庫 -->
+                <div class="card mb-4 resource-card" data-type="data" data-access="restricted">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="resource-header mb-2">
+                                    <span class="badge bg-primary me-2">資料庫</span>
+                                    <span class="badge bg-warning text-dark">限制存取</span>
+                                </div>
+                                <h3 class="resource-title">
+                                    <a href="/database/consciousness" class="text-decoration-none">大腦意識資料庫</a>
+                                </h3>
+                                <p class="resource-authors mb-2">
+                                    <strong>臺北醫學大學腦科學研究中心</strong>
+                                </p>
+                                <p class="resource-description">
+                                    研究大腦意識狀態、認知功能和神經可塑性的綜合資料庫，包含腦電圖、功能性磁振造影等多模態資料。專注於意識研究，為神經科學研究提供豐富的數據資源。
+                                </p>
+                                <div class="resource-tags mb-2">
+                                    <span class="badge bg-light text-dark me-1">意識研究</span>
+                                    <span class="badge bg-light text-dark me-1">腦電圖</span>
+                                    <span class="badge bg-light text-dark me-1">fMRI</span>
+                                    <span class="badge bg-light text-dark me-1">多模態</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <div class="resource-meta">
+                                    <p class="text-muted mb-1">發布日期: 2025年8月28日</p>
+                                    <p class="text-muted mb-1">版本: 1.0.0</p>
+                                    <p class="text-muted mb-3">狀態: 規劃中</p>
+                                    <button class="btn btn-warning btn-sm me-2" disabled>
+                                        <i class="fas fa-clock"></i> 即將開放
+                                    </button>
+                                    <a href="/database/consciousness" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-info-circle"></i> 詳細資訊
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 神經影像分析工具 -->
+                <div class="card mb-4 resource-card" data-type="software" data-access="open">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="resource-header mb-2">
+                                    <span class="badge bg-info me-2">軟體</span>
+                                    <span class="badge bg-success">開放存取</span>
+                                </div>
+                                <h3 class="resource-title">
+                                    <a href="/software/neuroimaging" class="text-decoration-none">神經影像分析工具包</a>
+                                </h3>
+                                <p class="resource-authors mb-2">
+                                    <strong>臺北醫學大學醫學影像實驗室</strong>
+                                </p>
+                                <p class="resource-description">
+                                    專為神經影像分析設計的 Python 工具包，支援腦電圖、功能性磁振造影、擴散張量影像等多種神經影像格式的處理和分析。
+                                </p>
+                                <div class="resource-tags mb-2">
+                                    <span class="badge bg-light text-dark me-1">Python</span>
+                                    <span class="badge bg-light text-dark me-1">神經影像</span>
+                                    <span class="badge bg-light text-dark me-1">EEG</span>
+                                    <span class="badge bg-light text-dark me-1">fMRI</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <div class="resource-meta">
+                                    <p class="text-muted mb-1">發布日期: 2025年8月28日</p>
+                                    <p class="text-muted mb-1">版本: 1.0.0</p>
+                                    <p class="text-muted mb-3">語言: Python</p>
+                                    <a href="https://github.com/tmu/neuroimaging-toolkit" class="btn btn-primary btn-sm me-2" target="_blank">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="/software/neuroimaging" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-info-circle"></i> 詳細資訊
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 探索區域 -->
+        <div class="row mb-4" id="explore">
+            <div class="col-12">
+                <h2 class="mb-4 text-center">探索更多資源</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-info">
+                            <div class="card-body text-center">
+                                <i class="fas fa-graduation-cap fa-3x text-info mb-3"></i>
+                                <h5 class="card-title">教學資源</h5>
+                                <p class="card-text">探索神經科學相關的教學材料、課程和學習資源，提升研究技能和知識水平。</p>
+                                <a href="#" class="btn btn-outline-info">瀏覽教學資源</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-warning">
+                            <div class="card-body text-center">
+                                <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                                <h5 class="card-title">研究挑戰</h5>
+                                <p class="card-text">參與神經科學研究挑戰，與其他研究人員競賽，推動創新研究發展。</p>
+                                <a href="#" class="btn btn-outline-warning">查看挑戰</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分享區域 -->
+        <div class="row mb-4" id="share">
+            <div class="col-12">
+                <div class="card border-warning">
+                    <div class="card-header bg-warning text-dark">
+                        <h5><i class="fas fa-plus-circle"></i> 分享您的資料庫</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">您有神經學研究資料庫想要分享嗎？我們歡迎研究人員提交新的資料庫，共同推進神經科學研究發展。</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>為什麼要分享？</h6>
+                                <ul>
+                                    <li>增加研究影響力和可見度</li>
+                                    <li>促進跨機構研究合作</li>
+                                    <li>為神經科學研究社群做出貢獻</li>
+                                    <li>獲得專業的資料管理和發布支援</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>支援的資料類型</h6>
+                                <ul>
+                                    <li>臨床研究資料</li>
+                                    <li>神經影像資料</li>
+                                    <li>基因組學資料</li>
+                                    <li>行為研究資料</li>
+                                    <li>軟體工具和腳本</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="/submit-database" class="btn btn-warning btn-lg">
+                                <i class="fas fa-plus-circle"></i> 開始提交資料庫
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="footer bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Minic</h5>
+                    <p>臺北醫學大學神經學研究資料庫平台</p>
+                    <p class="text-muted">整合多個神經學研究資料庫，促進神經科學研究發展</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>探索</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#explore">探索資源</a></li>
+                        <li><a href="#share">分享資料庫</a></li>
+                        <li><a href="/about">關於平台</a></li>
+                        <li><a href="/database/dementia">資料庫詳情</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>聯絡資訊</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope"></i> neurology@tmu.edu.tw</li>
+                        <li><i class="fas fa-phone"></i> +886-2-2736-1661</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 臺北市信義區吳興街250號</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 臺北醫學大學 神經學研究資料庫平台 | 參考 <a href="https://physionet.org/" target="_blank">PhysioNet</a> 設計，品牌為 Minic</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 載入中模態框 -->
+    <div class="modal fade" id="loadingModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">載入中...</span>
+                    </div>
+                    <h5>處理中...</h5>
+                    <p class="text-muted" id="loadingMessage">請稍候</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
