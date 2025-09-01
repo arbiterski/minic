@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "94ef1cac-60dc-b50c-5728-c51e15f1bbb2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.644150"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/94fc9c51-c542-fc50-b024-615a9ad2e93d"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "82f5585da95c6870",
+        "display": "0.5程度分級"
+      }
+    ],
+    "text": "0.5程度分級"
+  },
+  "valueString": "VMD"
+}

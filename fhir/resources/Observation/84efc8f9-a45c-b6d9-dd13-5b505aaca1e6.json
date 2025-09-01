@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "84efc8f9-a45c-b6d9-dd13-5b505aaca1e6",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.624219"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/6f402fa2-62ad-8d77-9b0c-f10d5373f6b8"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "PSP "
+}

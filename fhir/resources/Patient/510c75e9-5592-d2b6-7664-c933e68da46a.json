@@ -1,0 +1,25 @@
+{
+  "resourceType": "Patient",
+  "id": "510c75e9-5592-d2b6-7664-c933e68da46a",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/patient.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.623328"
+  },
+  "identifier": [
+    {
+      "system": "http://tmu.edu.tw/fhir/alzheimers/patient-id",
+      "value": "135ca9bbbd952d0d"
+    }
+  ],
+  "active": true,
+  "gender": "female",
+  "extension": [
+    {
+      "url": "http://tmu.edu.tw/fhir/alzheimers/age-group",
+      "valueString": "<50歲"
+    }
+  ]
+}

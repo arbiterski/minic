@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "3845fdda-ba14-db85-10d8-208cdb54ef07",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.597812"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/2d2012a9-a84d-16ee-4292-91e4a7297be1"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "stroke, hydro, FT lobe atrophy?"
+}

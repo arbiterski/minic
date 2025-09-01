@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "6d3b9c2f-656d-0adc-ff4d-3aff2ce6a279",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.059512"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/dcdd1c16-b628-309a-ffac-64215f611fac"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "seizure"
+}

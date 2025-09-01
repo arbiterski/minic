@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "a0dec820-973d-b17d-e45f-c6fa669a925b",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.575272"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/5047995c-8967-4752-c340-95f78b03e77b"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "I67.2 Cerebral atherosclerosis"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "951805eb-ed89-a3e4-6d29-f4753f3caaa0",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:14:38.823299"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/1f2e0826-52c9-ead6-99f2-3b305108cb6a"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "ff49ba722c964652",
+        "display": "Unnamed: 11"
+      }
+    ],
+    "text": "Unnamed: 11"
+  },
+  "valueString": "DLB suspected by Dr. Wu "
+}

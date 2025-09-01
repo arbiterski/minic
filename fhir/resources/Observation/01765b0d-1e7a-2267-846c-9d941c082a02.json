@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "01765b0d-1e7a-2267-846c-9d941c082a02",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.056036"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/30e424a3-ff51-d573-4477-081dbe4b6408"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "SCD? "
+}

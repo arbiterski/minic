@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 阿茲海默症分析資料庫 - Web 服務器
 """
@@ -10,7 +11,7 @@ import hashlib
 import requests
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Any
+
 from flask import Flask, render_template, request, jsonify, send_from_directory
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -31,18 +32,18 @@ class WebClaudeService:
         self.server_url = CLAUDE_SERVER_URL
         self.jobs = {}
     
-    def _append_log(self, job_id: str, message: str) -> None:
+    def _append_log(self, job_id, message):
         job = self.jobs.get(job_id)
         if job is None:
             return
         logs = job.setdefault('logs', [])
         timestamp = datetime.now().strftime('%H:%M:%S')
-        line = f"[{timestamp}] {message}"
+        line = "[{}] {}".format(timestamp, message)
         logs.append(line)
         # 同步輸出到終端機
-        print(f"[job {job_id}] {line}")
+        print("[job {}] {}".format(job_id, line))
 
-    def _slugify(self, text: str, default: str = 'artifact') -> str:
+    def _slugify(self, text, default='artifact'):
         if not text:
             return default
         # keep CJK and alnum, replace others with underscore, then trim
@@ -50,24 +51,24 @@ class WebClaudeService:
         text = re.sub(r"_+", "_", text).strip("_")
         return (text or default)[:64]
     
-    def generate_code(self, question: str, outputs: List[str], privacy_level: str) -> Dict[str, Any]:
+    def generate_code(self, question, outputs, privacy_level):
         """生成 Python 程式碼"""
         
         try:
             # 構建請求訊息
-            message = f"""
+            message = """
 請為以下阿茲海默症資料分析問題生成 Python 程式碼：
 
-問題：{question}
-隱私等級：{privacy_level}
-期望輸出：{', '.join(outputs)}
+問題：{}
+隱私等級：{}
+期望輸出：{}
 
 要求：
-1. 讀取 CSV 檔案：{DATASET_PATH}/{DATASET_FILE}
-2. 生成 {', '.join(outputs)} 輸出
-3. 應用 {privacy_level} 隱私保護
+1. 讀取 CSV 檔案：{}/{}
+2. 生成 {} 輸出
+3. 應用 {} 隱私保護
 4. 使用 pandas, matplotlib 等庫
-5. 將圖表保存到 {ARTIFACT_DIR}/ 目錄
+5. 將圖表保存到 {}/ 目錄
 6. 返回可執行的 Python 程式碼
 
 資料檔案包含以下欄位：
@@ -79,11 +80,11 @@ class WebClaudeService:
 輸出格式要求（重要）：
 - 只輸出純 Python 程式碼，且不要包含 Markdown、不要包含```標記、不要任何解說文字。
 - 程式碼中直接使用變數 ARTIFACT_DIR 作為輸出目錄。
-            """.strip()
+            """.format(question, privacy_level, ', '.join(outputs), DATASET_PATH, DATASET_FILE, ', '.join(outputs), privacy_level, ARTIFACT_DIR).strip()
             
             # 發送請求到 Claude Code Server
             response = requests.post(
-                f"{self.server_url}/api/execute",
+                "{}/api/execute".format(self.server_url),
                 headers={"Content-Type": "application/json"},
                 json={
                     "message": message,
@@ -121,32 +122,32 @@ class WebClaudeService:
                     'source': 'claude_code_server'
                 }
             else:
-                raise Exception(f"Claude Code Server 回應錯誤: {response.status_code}")
+                raise Exception("Claude Code Server 回應錯誤: {}".format(response.status_code))
                 
         except Exception as e:
-            print(f"Claude Code Server 調用失敗: {e}")
+            print("Claude Code Server 調用失敗: {}".format(e))
             # 返回預設程式碼
             return self._generate_default_code(question, outputs, privacy_level)
     
-    def _generate_default_code(self, question: str, outputs: List[str], privacy_level: str) -> Dict[str, Any]:
+    def _generate_default_code(self, question, outputs, privacy_level):
         """生成預設程式碼"""
         
-        code = f'''# 生成程式碼: {question}
-# 隱私等級: {privacy_level}
-# 輸出類型: {', '.join(outputs)}
+        code = '''# 生成程式碼: {}
+# 隱私等級: {}
+# 輸出類型: {}
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # 讀取 CSV 資料
-df = pd.read_csv('{DATASET_PATH}/{DATASET_FILE}')
+df = pd.read_csv('{}/{}')
 
 # 基本統計
-print(f"資料集大小: {{df.shape}}")
-print(f"欄位: {{list(df.columns)}}")
+        print("資料集大小: {}".format(df.shape))
+        print("欄位: {}".format(list(df.columns)))
 
 # 生成輸出
-'''
+'''.format(question, privacy_level, ', '.join(outputs), DATASET_PATH, DATASET_FILE)
         
         if "plot" in outputs:
             code += '''
@@ -173,7 +174,7 @@ plt.title('病患年齡分布')
 plt.xlabel('年齡')
 plt.ylabel('人數')
 plt.tight_layout()
-outfile = f"{ARTIFACT_DIR}/{ARTIFACT_BASENAME}_plot.png"
+outfile = "{}/{}_{}_plot.png".format(ARTIFACT_DIR, ARTIFACT_BASENAME, job_id)
 plt.savefig(outfile, dpi=300, bbox_inches='tight')
 plt.close()
 '''
@@ -190,14 +191,14 @@ age_bins = pd.cut(age_series, bins=bins, labels=labels, right=False)
 age_bin_counts = age_bins.value_counts().sort_index().to_frame(name='count')
 
 summary = pd.concat([age_stats, age_bin_counts], axis=1)
-summary.to_csv(f"{ARTIFACT_DIR}/{ARTIFACT_BASENAME}_summary.csv")
+summary.to_csv("{}/{}_{}_summary.csv".format(ARTIFACT_DIR, ARTIFACT_BASENAME, job_id))
 '''
         
         if "explanation" in outputs:
             code += '''
 # 生成分析說明
-explanation = f"資料集包含 {{len(df)}} 筆記錄，{len(df.columns)} 個欄位。"
-with open(f'{ARTIFACT_DIR}/explanation.txt', 'w', encoding='utf-8') as f:
+explanation = "資料集包含 {} 筆記錄，{} 個欄位。".format(len(df), len(df.columns))
+with open('{}/explanation.txt'.format(ARTIFACT_DIR), 'w', encoding='utf-8') as f:
     f.write(explanation)
 '''
         
@@ -212,7 +213,7 @@ with open(f'{ARTIFACT_DIR}/explanation.txt', 'w', encoding='utf-8') as f:
             'source': 'default'
         }
     
-    def execute_code(self, code: str, job_id: str) -> Dict[str, Any]:
+    def execute_code(self, code, job_id):
         """執行 Python 程式碼"""
         
         try:
@@ -227,7 +228,7 @@ with open(f'{ARTIFACT_DIR}/explanation.txt', 'w', encoding='utf-8') as f:
             exec_globals = {
                 '__builtins__': __builtins__,
                 '__name__': '__main__',
-                '__file__': f'analysis_{job_id}.py',
+                '__file__': 'analysis_{}.py'.format(job_id),
                 'ARTIFACT_DIR': str(artifacts_dir)  # 添加 ARTIFACT_DIR 變數
             }
             
@@ -259,7 +260,7 @@ with open(f'{ARTIFACT_DIR}/explanation.txt', 'w', encoding='utf-8') as f:
                     'ARTIFACT_BASENAME': artifact_basename
                 })
             except ImportError as e:
-                return {'status': 'error', 'error': f'模組導入失敗: {e}'}
+                return {'status': 'error', 'error': '模組導入失敗: {}'.format(e)}
             
             # 執行程式碼
             exec(code, exec_globals)
@@ -284,10 +285,10 @@ with open(f'{ARTIFACT_DIR}/explanation.txt', 'w', encoding='utf-8') as f:
                 'artifacts': []
             }
     
-    def create_analysis(self, question: str, outputs: List[str], privacy_level: str) -> str:
+    def create_analysis(self, question, outputs, privacy_level):
         """創建分析工作"""
         
-        job_id = f"job_{len(self.jobs) + 1}_{int(datetime.now().timestamp())}"
+        job_id = "job_{}_{}".format(len(self.jobs) + 1, int(datetime.now().timestamp()))
         # 初始化工作（先寫入，以便即時追加日誌）
         artifact_basename = self._slugify(question)
         self.jobs[job_id] = {
@@ -309,7 +310,7 @@ with open(f'{ARTIFACT_DIR}/explanation.txt', 'w', encoding='utf-8') as f:
         code_result = self.generate_code(question, outputs, privacy_level)
         self.jobs[job_id]['code'] = code_result['code']
         self.jobs[job_id]['code_hash'] = code_result['code_hash']
-        self._append_log(job_id, f"程式碼來源: {code_result.get('source', 'unknown')}")
+        self._append_log(job_id, "程式碼來源: {}".format(code_result.get('source', 'unknown')))
         
         # 執行程式碼
         self._append_log(job_id, '開始執行分析程式碼')
@@ -318,17 +319,17 @@ with open(f'{ARTIFACT_DIR}/explanation.txt', 'w', encoding='utf-8') as f:
         
         if execution_result.get('status') == 'success':
             artifacts = execution_result.get('artifacts', [])
-            self._append_log(job_id, f"分析完成，產出檔案: {', '.join(artifacts) if artifacts else '無'}")
+            self._append_log(job_id, "分析完成，產出檔案: {}".format(', '.join(artifacts) if artifacts else '無'))
         else:
-            self._append_log(job_id, f"分析失敗: {execution_result.get('error', '未知錯誤')}")
+            self._append_log(job_id, "分析失敗: {}".format(execution_result.get('error', '未知錯誤')))
         
         return job_id
     
-    def get_job_status(self, job_id: str) -> Dict[str, Any]:
+    def get_job_status(self, job_id):
         """獲取工作狀態"""
         return self.jobs.get(job_id, {'error': '工作不存在'})
     
-    def list_jobs(self) -> List[Dict[str, Any]]:
+    def list_jobs(self):
         """列出所有工作"""
         return [
             {
@@ -456,7 +457,7 @@ def database_detail(database_name):
             'methods': '資料收集採用標準化神經心理評估工具，包括MMSE、CASI、CDR等量表。所有數據經過嚴格去識別化處理，確保患者隱私保護。',
             'data_description': '資料庫包含多個CSV檔案，涵蓋患者基本資訊、診斷結果、認知測試分數、腦部影像評分等。',
             'usage_notes': '本資料庫僅供研究使用，使用者需遵守相關倫理規範和資料使用協議。',
-            'release_notes': '初始版本包含2012-2020年收案資料，經過去識別化處理後發布。',
+            'release_notes': '初始版本包含2012-2024年收案資料，經過去識別化處理後發布。',
             'ethics': '本研究已通過臺北醫學大學人體試驗委員會審查，所有參與者均簽署知情同意書。',
             'acknowledgements': '感謝所有參與研究的患者及其家屬，以及研究團隊成員的貢獻。',
             'conflicts_of_interest': '研究團隊聲明無利益衝突。',
@@ -487,11 +488,11 @@ if __name__ == '__main__':
     # 檢查資料檔案
     csv_file = Path(DATASET_PATH) / DATASET_FILE
     if not csv_file.exists():
-        print(f"❌ 找不到資料檔案: {csv_file}")
+        print("❌ 找不到資料檔案: {}".format(csv_file))
         print("   請確保 CSV 檔案已放置在正確位置")
         exit(1)
     
-    print(f"✅ 找到資料檔案: {csv_file}")
+    print("✅ 找到資料檔案: {}".format(csv_file))
     print("🌐 啟動 Web 服務器...")
     print("📱 訪問: http://localhost:5001")
     

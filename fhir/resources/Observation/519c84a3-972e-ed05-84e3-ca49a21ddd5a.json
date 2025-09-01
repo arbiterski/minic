@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "519c84a3-972e-ed05-84e3-ca49a21ddd5a",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.875956"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/79bc94f7-f5e2-1353-6fa4-f189f6ab91c0"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "brain CT: brain atrophy,在亞東診斷中度失智,其他檢查未做 (loss f/u)"
+}

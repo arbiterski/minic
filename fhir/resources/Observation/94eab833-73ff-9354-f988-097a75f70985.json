@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "94eab833-73ff-9354-f988-097a75f70985",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.842904"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/39adc781-f593-519a-85a7-4f57e2fab101"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e37502001c891ca8",
+        "display": "NCV檢查"
+      }
+    ],
+    "text": "NCV檢查"
+  },
+  "valueString": "sepct:FTD?,用AD drug,frontal varient AD"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "0f09be80-787b-c77e-84b9-7dd3040a8f48",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.077051"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/d0279693-ee5e-e9fe-b049-af605dc7e420"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "eb6ad55d022ed906",
+        "display": "不確定或不知道"
+      }
+    ],
+    "text": "不確定或不知道"
+  },
+  "valueString": "血管型失智症"
+}

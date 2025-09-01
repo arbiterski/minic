@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "c0609c65-4c88-0263-129b-2072cc97f3b0",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:14:39.587554"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/44db9a33-1d2a-a66b-6051-eba7d1ed81fb"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "2291cb70ec23721d",
+        "display": "趙書屏"
+      }
+    ],
+    "text": "趙書屏"
+  },
+  "valueString": "洪千岱"
+}

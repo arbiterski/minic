@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "737957c6-66c5-97cb-5ee2-c741d1c6342a",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.839239"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/ee1e10ea-ca2d-166d-5d9a-59c9bec6ad1f"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "陳柏志"
+}

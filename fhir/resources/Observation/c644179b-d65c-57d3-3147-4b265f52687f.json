@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "c644179b-d65c-57d3-3147-4b265f52687f",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.571847"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/5d62cbb7-d296-ce4e-4742-97611d209b2f"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "amyloid PET (+) "
+}

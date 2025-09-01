@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "e26ed17e-0e73-5abf-9157-95d25f19d44f",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.630405"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/c9cc2369-3aaa-1f16-f7ca-7db407aa8121"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "I67.9 Cerebrovascular disease, unspecified"
+}

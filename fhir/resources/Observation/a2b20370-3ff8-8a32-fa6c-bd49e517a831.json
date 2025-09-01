@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "a2b20370-3ff8-8a32-fa6c-bd49e517a831",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.026571"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/6f02c083-73c0-2199-7daf-6179ace0828d"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "Left upper lobe adenocarcinoma (cT3N2M1a) stage 4 with lung to lung metastatsis and brain mets?"
+}

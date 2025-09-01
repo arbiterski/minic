@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "e6a10298-f05b-fbaf-acfa-b435fdf5abaf",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.632631"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/fdc6b180-a722-f968-01e3-be3b00005315"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "F02.80 Dementia in other diseases classified elsewhere without behavioral disturbance\nI67.9 Cerebrovascular disease, unspecified"
+}

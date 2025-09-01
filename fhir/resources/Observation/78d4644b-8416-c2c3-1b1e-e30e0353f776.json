@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "78d4644b-8416-c2c3-1b1e-e30e0353f776",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.037649"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/8b53f4c9-3aa9-a8dd-2b32-10c8ac4cf438"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "為了申請外傭, rapid cogntive decline, CDR:2,MMSE:5,拿到BARTH INDEX後就沒回診"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "533bc121-a745-19ff-e042-635e0742cbcd",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.615305"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/99f94914-ed90-f76c-46f0-9375b3be6ab5"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e68bd10800954602",
+        "display": "有無精神行為症狀診斷碼"
+      }
+    ],
+    "text": "有無精神行為症狀診斷碼"
+  },
+  "valueString": "未抽血"
+}

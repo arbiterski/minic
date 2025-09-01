@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "283b2b8a-18d7-628c-1d56-99413f551a90",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:14:39.596041"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/a336c32a-ea52-d225-a27b-ec5ff98f732e"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e37502001c891ca8",
+        "display": "NCV檢查"
+      }
+    ],
+    "text": "NCV檢查"
+  },
+  "valueString": "N"
+}

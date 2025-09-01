@@ -1,0 +1,52 @@
+{
+  "resourceType": "Condition",
+  "id": "a691d9a4-79e9-c4d9-22e9-8690bbcca745",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/condition.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:14:39.553341"
+  },
+  "subject": {
+    "reference": "Patient/f8bbd426-2cb4-2585-0f5e-c37ec3264ebf"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/diagnosis",
+        "code": "6eb23e99ed7fd9aa",
+        "display": "失智症"
+      }
+    ],
+    "text": "失智症"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "severity": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/dementia-severity",
+        "code": "f167d4352488d690",
+        "display": "中度失智"
+      }
+    ],
+    "text": "中度失智"
+  }
+}

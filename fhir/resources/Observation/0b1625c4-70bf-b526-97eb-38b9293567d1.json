@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "0b1625c4-70bf-b526-97eb-38b9293567d1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.013187"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/192be8b6-79ca-8acb-b292-d3f10f07544a"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "alcoholism"
+}

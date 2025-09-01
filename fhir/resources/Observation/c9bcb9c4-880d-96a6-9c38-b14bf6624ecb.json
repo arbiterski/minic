@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "c9bcb9c4-880d-96a6-9c38-b14bf6624ecb",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.044032"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/5cd25ee0-b2fc-25cb-659c-eac69968d022"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "eb6ad55d022ed906",
+        "display": "不確定或不知道"
+      }
+    ],
+    "text": "不確定或不知道"
+  },
+  "valueString": "額顳葉型失智症"
+}

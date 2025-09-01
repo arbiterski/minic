@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "b8129e53-3bc4-7293-4a89-46865cb7ae94",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:14:38.796222"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/cfd1996c-3dc1-b850-84fb-63ad227591a5"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "ff49ba722c964652",
+        "display": "Unnamed: 11"
+      }
+    ],
+    "text": "Unnamed: 11"
+  },
+  "valueString": "FTD?frontal vairent AD"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "9d18ea6d-0cd6-3fd9-8c40-45a6f43ca0a9",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:42.314032"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/ab43baca-337c-7cf7-1d47-d4805dddd66e"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e000d4c30b58520f",
+        "display": "確診日期"
+      }
+    ],
+    "text": "確診日期"
+  },
+  "valueString": "2018-02-07 0:00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "84873d40-91ee-c295-7401-e6fe011c512c",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.875972"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/79bc94f7-f5e2-1353-6fa4-f189f6ab91c0"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e37502001c891ca8",
+        "display": "NCV檢查"
+      }
+    ],
+    "text": "NCV檢查"
+  },
+  "valueString": "父親智能不足，其疑似亦有智能不足;過去都在亞東看moderate dementia,但在本院CDR:0.5,CASI19,就診4次"
+}

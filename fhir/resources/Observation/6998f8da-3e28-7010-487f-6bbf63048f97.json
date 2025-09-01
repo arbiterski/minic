@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "6998f8da-3e28-7010-487f-6bbf63048f97",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.588697"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/cb191982-d074-40d1-db0a-91b7d4d4285f"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "G20 Parkinson's disease"
+}

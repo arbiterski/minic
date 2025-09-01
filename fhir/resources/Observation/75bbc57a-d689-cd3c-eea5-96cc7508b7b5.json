@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "75bbc57a-d689-cd3c-eea5-96cc7508b7b5",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.587244"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/1dd1e510-328d-6cb8-f5b6-8ca4a016c1dd"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "I63.40 Cerebral infarction due to embolism of unspecified cerebral artery"
+}

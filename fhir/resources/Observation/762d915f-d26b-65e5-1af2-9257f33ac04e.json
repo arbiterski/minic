@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "762d915f-d26b-65e5-1af2-9257f33ac04e",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.064265"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/c4782e83-d3d1-7c0b-84be-750e0c51674c"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "eb6ad55d022ed906",
+        "display": "不確定或不知道"
+      }
+    ],
+    "text": "不確定或不知道"
+  },
+  "valueString": "帕金森氏失智症"
+}

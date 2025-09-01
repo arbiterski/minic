@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "0d487605-82c0-ebb7-3fbe-26f8f907c1aa",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.836737"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/daeead8c-b647-1283-1818-0e4ea07126b4"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "黃立楷"
+}

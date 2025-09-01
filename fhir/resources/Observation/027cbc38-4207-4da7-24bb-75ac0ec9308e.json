@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "027cbc38-4207-4da7-24bb-75ac0ec9308e",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.572600"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/6cb09873-4b66-0e9f-5fb6-da9fd9645807"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e37502001c891ca8",
+        "display": "NCV檢查"
+      }
+    ],
+    "text": "NCV檢查"
+  },
+  "valueString": "right median neuropathy and right L5/S1 radiculopathy"
+}

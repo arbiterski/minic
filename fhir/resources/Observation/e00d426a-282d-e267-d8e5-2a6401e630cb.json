@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "e00d426a-282d-e267-d8e5-2a6401e630cb",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.872296"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/0232f1d0-0ddf-58ae-854e-a1db552a5b13"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "檢查不完整(只有心測)睡眠不好,記憶力差"
+}

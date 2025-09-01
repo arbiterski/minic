@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "fe815b5b-a6d4-be6d-5271-b408ec55a5fc",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.604332"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/ffe270e1-82ef-7774-a569-47b2f31c5db1"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "G30.1 Alzheimer's disease with late onset"
+}

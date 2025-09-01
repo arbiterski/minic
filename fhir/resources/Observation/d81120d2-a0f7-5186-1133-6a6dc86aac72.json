@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "d81120d2-a0f7-5186-1133-6a6dc86aac72",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:14:38.796344"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/98682e6a-d721-f840-8241-91b64de3dc4c"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "ff49ba722c964652",
+        "display": "Unnamed: 11"
+      }
+    ],
+    "text": "Unnamed: 11"
+  },
+  "valueString": "r/o DLB or AD with BPSD (2021/9後loss f/u)"
+}

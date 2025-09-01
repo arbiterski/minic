@@ -67,6 +67,10 @@ static/downloads/
 *.pdf
 *.zip
 
+# Allow anonymized data files
+!static/downloads/anonymized_csv.zip
+!static/downloads/download_info.json
+
 # Temporary files
 *.tmp
 *.temp

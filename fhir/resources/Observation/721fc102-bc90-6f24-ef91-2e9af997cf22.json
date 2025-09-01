@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "721fc102-bc90-6f24-ef91-2e9af997cf22",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.604864"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/9d567a94-253c-a10f-1534-d7d845bec0ce"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "F01.50 Vascular dementia without behavioral disturbance"
+}

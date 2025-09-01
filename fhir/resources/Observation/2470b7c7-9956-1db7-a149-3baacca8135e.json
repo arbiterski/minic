@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "2470b7c7-9956-1db7-a149-3baacca8135e",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.035825"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/ed13098d-c8a0-0289-d73b-ea8b08f982c8"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e68bd10800954602",
+        "display": "有無精神行為症狀診斷碼"
+      }
+    ],
+    "text": "有無精神行為症狀診斷碼"
+  },
+  "valueString": "F03.91失智症，有BPSD"
+}

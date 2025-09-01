@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-}
+    restart: unless-stopped
+    networks:
+      - dementia_network
+
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+      - DATASET_PATH=/data/alzheimers_cohort_v1
+      - ARTIFACT_DIR=/app/artifacts
+      - DEBUG=false
+    volumes:
+      - ./data:/data:ro
+      - ./artifacts:/app/artifacts
+      - ./logs:/app/logs
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - dementia_network
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+
+  worker:
+    build: .
+    environment:
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+      - DATASET_PATH=/data/alzheimers_cohort_v1
+      - ARTIFACT_DIR=/app/artifacts
+    volumes:
+      - ./data:/data:ro
+      - ./artifacts:/app/artifacts
+      - ./logs:/app/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - dementia_network
+    command: python -m app.worker
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - web
+    restart: unless-stopped
+    networks:
+      - dementia_network
+
+volumes:
+  redis_data:
+    driver: local
+
+networks:
+  dementia_network:
+    driver: bridge

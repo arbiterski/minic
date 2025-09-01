@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "148ef775-51b1-b8b3-8e35-e7017efb3609",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.070881"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/5ccde280-8126-aa19-3451-18df55c61e93"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "eb6ad55d022ed906",
+        "display": "不確定或不知道"
+      }
+    ],
+    "text": "不確定或不知道"
+  },
+  "valueString": "路易士體失智症"
+}

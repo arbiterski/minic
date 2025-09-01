@@ -1,0 +1,28 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "tmu-alzheimers-severity",
+  "url": "http://tmu.edu.tw/fhir/alzheimers/dementia-severity",
+  "version": "1.0.0",
+  "name": "TaiwanAlzheimersSeverity",
+  "title": "臺灣失智症嚴重程度代碼系統",
+  "status": "active",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "0.5",
+      "display": "極輕度"
+    },
+    {
+      "code": "1",
+      "display": "輕度"
+    },
+    {
+      "code": "2",
+      "display": "中度"
+    },
+    {
+      "code": "3",
+      "display": "重度"
+    }
+  ]
+}

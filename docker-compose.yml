@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - DATASET_PATH=/data/alzheimers_cohort_v1
+      - ARTIFACT_DIR=/app/artifacts
+    volumes:
+      - ./data:/data:ro
+      - ./artifacts:/app/artifacts
+    depends_on:
+      - redis
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  worker:
+    build: .
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - DATASET_PATH=/data/alzheimers_cohort_v1
+      - ARTIFACT_DIR=/app/artifacts
+    volumes:
+      - ./data:/data:ro
+      - ./artifacts:/app/artifacts
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - redis
+    command: python -m app.worker
+    privileged: true
+
+volumes:
+  redis_data:

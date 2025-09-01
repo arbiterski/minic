@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "f97d9aa5-6d1b-cb54-802e-252bc19d0277",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.017163"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/41278126-bd25-6d38-03c3-69c043d4df9a"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "胡朝榮"
+}

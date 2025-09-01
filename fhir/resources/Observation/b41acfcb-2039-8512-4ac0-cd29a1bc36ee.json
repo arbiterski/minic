@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "b41acfcb-2039-8512-4ac0-cd29a1bc36ee",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.034469"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/1b1b78b5-0104-c45d-f885-95e8931fd0ce"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "神經梅毒"
+}

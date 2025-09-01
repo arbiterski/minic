@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "a36d4e47-606d-124c-ca67-3b491c70c967",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.038671"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/788a27d3-0a19-28b3-0ba2-ca6bde99727f"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "Late life depression有自殺意念,但無法排除MCI"
+}

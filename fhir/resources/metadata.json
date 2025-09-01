@@ -1,0 +1,87 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "tmu-alzheimers-fhir-server",
+  "url": "http://tmu.edu.tw/fhir/alzheimers/metadata",
+  "version": "1.0.0",
+  "name": "TaiwanAlzheimersDatabase",
+  "title": "臺灣失智症臨床資料庫 FHIR API",
+  "status": "active",
+  "date": "2025-08-28T05:15:44.396126",
+  "publisher": "臺北醫學大學",
+  "description": "臺灣失智症臨床資料庫 FHIR 服務的能力聲明",
+  "kind": "instance",
+  "implementation": {
+    "description": "臺灣失智症臨床資料庫 FHIR 服務",
+    "url": "http://tmu.edu.tw/fhir/alzheimers"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Patient",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "gender",
+              "type": "token",
+              "documentation": "患者性別"
+            }
+          ]
+        },
+        {
+          "type": "Condition",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "subject",
+              "type": "reference",
+              "documentation": "患者參考"
+            }
+          ]
+        },
+        {
+          "type": "Observation",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "subject",
+              "type": "reference",
+              "documentation": "患者參考"
+            },
+            {
+              "name": "code",
+              "type": "token",
+              "documentation": "觀察項目代碼"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

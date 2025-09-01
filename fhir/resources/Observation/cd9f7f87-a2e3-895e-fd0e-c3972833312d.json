@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "cd9f7f87-a2e3-895e-fd0e-c3972833312d",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.631281"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/81b42da2-6fb4-9721-37a1-f7e2a77ef75c"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "I61.9 Nontraumatic intracerebral hemorrhage, unspecified\nG91.9 Hydrocephalus, unspecified"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "b2572b4e-a6c7-673b-a934-e1f2169c081c",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.012099"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/e38fd433-c1ea-7cda-c5e1-2f5e3abf8e6b"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "洪千岱"
+}

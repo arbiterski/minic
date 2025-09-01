@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "39cba84b-4c51-9ac3-b695-8019c1885752",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.058857"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/99c239b8-d176-2241-8ffd-4f4aaa283888"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "thyroid +AD+"
+}

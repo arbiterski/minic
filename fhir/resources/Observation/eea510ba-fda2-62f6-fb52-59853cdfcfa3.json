@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "eea510ba-fda2-62f6-fb52-59853cdfcfa3",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.573648"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/dbb2a288-9f3f-b3fb-4a71-316432997620"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "microbleedsm CAA"
+}

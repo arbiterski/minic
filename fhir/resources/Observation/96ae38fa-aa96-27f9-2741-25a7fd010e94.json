@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "96ae38fa-aa96-27f9-2741-25a7fd010e94",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.573918"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/46d94c32-ecb8-1406-ccdf-223ea23c5b3e"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e37502001c891ca8",
+        "display": "NCV檢查"
+      }
+    ],
+    "text": "NCV檢查"
+  },
+  "valueString": "Sensorimotor polyneuropathy, axonal"
+}

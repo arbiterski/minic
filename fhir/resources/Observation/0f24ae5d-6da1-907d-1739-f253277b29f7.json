@@ -1,0 +1,31 @@
+{
+  "resourceType": "Observation",
+  "id": "0f24ae5d-6da1-907d-1739-f253277b29f7",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.872380"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/e3b777b6-6df2-7a5b-3a93-b2e9b21e4860"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "bb9afaaebf1de877",
+        "display": "編號"
+      }
+    ],
+    "text": "編號"
+  },
+  "valueQuantity": {
+    "value": 507.0,
+    "unit": "",
+    "system": "http://unitsofmeasure.org",
+    "code": ""
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "72fc0481-f8a7-44e0-e86e-dde8a5ee29e6",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.606472"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/4413fdd4-20bb-7940-c0f3-783e56073195"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "S06.6X0A Traumatic subarachnoid hemorrhage without loss of consciousness, initial encounter"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "8a436677-05f9-2ee8-d654-06982a4c70fb",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.619834"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/99871b80-34e3-521d-badf-f3f3bf9dd38f"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "82f5585da95c6870",
+        "display": "0.5程度分級"
+      }
+    ],
+    "text": "0.5程度分級"
+  },
+  "valueString": "MCI"
+}

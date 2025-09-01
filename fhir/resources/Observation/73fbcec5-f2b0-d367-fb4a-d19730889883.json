@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "73fbcec5-f2b0-d367-fb4a-d19730889883",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.608144"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/97ae8027-d877-787e-7162-1ddca6273787"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "F03.90 Unspecified dementia without behavioral disturbance"
+}

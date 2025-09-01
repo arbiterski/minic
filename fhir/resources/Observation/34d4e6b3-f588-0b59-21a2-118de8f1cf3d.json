@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "34d4e6b3-f588-0b59-21a2-118de8f1cf3d",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.027483"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/1ed00f26-b7de-44e7-945e-eb5a5d09de3b"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "76fa03fe82b9aa62",
+        "display": "服務狀態"
+      }
+    ],
+    "text": "服務狀態"
+  },
+  "valueString": "服務中"
+}

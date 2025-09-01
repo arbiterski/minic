@@ -1,0 +1,24 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "tmu-alzheimers-diagnosis",
+  "url": "http://tmu.edu.tw/fhir/alzheimers/diagnosis",
+  "version": "1.0.0",
+  "name": "TaiwanAlzheimersDiagnosis",
+  "title": "臺灣失智症診斷代碼系統",
+  "status": "active",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "AD",
+      "display": "阿茲海默症"
+    },
+    {
+      "code": "VD",
+      "display": "血管性失智症"
+    },
+    {
+      "code": "MCI",
+      "display": "輕度認知障礙"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "c0620193-e30f-b091-534a-b21a0c5bd2d5",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:14:38.817151"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/caccdf1d-521e-f886-c726-7c702ea96e1f"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "b828dc0a59d6def9",
+        "display": "確認診斷醫師"
+      }
+    ],
+    "text": "確認診斷醫師"
+  },
+  "valueString": "趙書屏"
+}

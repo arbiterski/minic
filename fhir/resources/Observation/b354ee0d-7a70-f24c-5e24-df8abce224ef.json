@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "b354ee0d-7a70-f24c-5e24-df8abce224ef",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.833704"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/8b3e72bd-fccb-a396-d166-dccbe768435e"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "李薰華"
+}

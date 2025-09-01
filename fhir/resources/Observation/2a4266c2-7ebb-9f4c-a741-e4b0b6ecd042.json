@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "2a4266c2-7ebb-9f4c-a741-e4b0b6ecd042",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:06.842665"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/5f19282c-5016-727b-8ef8-7e002c31952c"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "e37502001c891ca8",
+        "display": "NCV檢查"
+      }
+    ],
+    "text": "NCV檢查"
+  },
+  "valueString": "就診過1 次,檢查未完整(血未抽)"
+}

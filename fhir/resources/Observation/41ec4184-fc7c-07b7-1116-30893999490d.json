@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "41ec4184-fc7c-07b7-1116-30893999490d",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.055833"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/5f5cb6f9-061d-3031-038b-b3c7de8ad71b"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "loss of F/U"
+}

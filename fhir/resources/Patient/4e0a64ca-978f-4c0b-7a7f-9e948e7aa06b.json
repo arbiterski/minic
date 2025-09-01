@@ -1,0 +1,20 @@
+{
+  "resourceType": "Patient",
+  "id": "4e0a64ca-978f-4c0b-7a7f-9e948e7aa06b",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/patient.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:42.234015"
+  },
+  "identifier": [
+    {
+      "system": "http://tmu.edu.tw/fhir/alzheimers/patient-id",
+      "value": "80eba1c27c00e58f"
+    }
+  ],
+  "active": true,
+  "gender": "unknown",
+  "extension": []
+}

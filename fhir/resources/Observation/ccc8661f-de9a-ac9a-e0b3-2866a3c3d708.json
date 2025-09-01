@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "ccc8661f-de9a-ac9a-e0b3-2866a3c3d708",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.036807"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/0557f303-4042-80ee-5712-2e4208885bde"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "無腦部影像,但病史和心測像AD"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "e590a35d-b563-daf2-578b-742a2a013dba",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.080861"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/2fba0872-45b8-907a-e427-1b0018871405"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "心測變化怪..."
+}

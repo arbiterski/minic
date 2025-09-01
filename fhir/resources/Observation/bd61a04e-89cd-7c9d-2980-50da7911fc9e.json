@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "bd61a04e-89cd-7c9d-2980-50da7911fc9e",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.038425"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/ee84d434-3f1e-bb4f-2372-80d7cdfa91d8"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "只為Barth index就醫,未完整survey"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "0d386131-e752-a262-4ad7-59371c9a3ba2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.601698"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/cd982039-8813-79de-7b71-a1e701a9052c"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "CAA with ICH "
+}

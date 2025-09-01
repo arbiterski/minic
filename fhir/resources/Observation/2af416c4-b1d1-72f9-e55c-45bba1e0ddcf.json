@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "2af416c4-b1d1-72f9-e55c-45bba1e0ddcf",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:43.625498"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/7e058984-3885-fddd-ae2b-075566ea2942"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "667fc5c01af04d28",
+        "display": "備註（或其他診斷）"
+      }
+    ],
+    "text": "備註（或其他診斷）"
+  },
+  "valueString": "找不到 病歷號錯"
+}

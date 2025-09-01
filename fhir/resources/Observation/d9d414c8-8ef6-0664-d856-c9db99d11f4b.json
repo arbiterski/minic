@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "d9d414c8-8ef6-0664-d856-c9db99d11f4b",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/R4/observation.html"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2025-08-28T05:15:41.013331"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/a95f1bb1-c2b8-ab85-d6aa-842f6236f3ed"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://tmu.edu.tw/fhir/alzheimers/observation",
+        "code": "cb2a19d31dd6e359",
+        "display": "確診/看診醫師"
+      }
+    ],
+    "text": "確診/看診醫師"
+  },
+  "valueString": "鄔定宇"
+}
