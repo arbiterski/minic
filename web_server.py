@@ -471,7 +471,7 @@ def database_detail(database_name):
             'license': 'Creative Commons Attribution 4.0 International License',
             'doi': '10.1371/journal.pone.0292527',
             'topics': ['阿茲海默症', '神經心理評估', '認知功能', '機器學習', '異質性分析'],
-            'project_website': 'https://neurology.tmu.edu.tw',
+            'project_website': 'https://neurologytmu.loinc100.org',
             'total_size': '213.29 KB',
             'zip_size': '213.29 KB',
             'download_url': '/download/anonymized_csv.zip',
