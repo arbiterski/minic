@@ -21,21 +21,40 @@
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">首頁</a>
+                        <a class="nav-link" href="/" data-i18n="nav.home">首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/about">關於</a>
+                        <a class="nav-link active" href="/about" data-i18n="nav.about">關於</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#explore">探索</a>
+                        <a class="nav-link" href="/#explore" data-i18n="nav.explore">探索</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#share">分享</a>
+                        <a class="nav-link" href="/#share" data-i18n="nav.share">分享</a>
                     </li>
                 </ul>
                 <div class="navbar-nav">
+                    <!-- Language Switcher -->
+                    <div class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i>
+                            <span id="currentLang">中文</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#" data-lang="zh-TW">
+                                    🇹🇼 繁體中文
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-lang="en">
+                                    🇺🇸 English
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <a class="nav-link" href="/#add-database">
-                        <i class="fas fa-plus"></i> 新增資料庫
+                        <i class="fas fa-plus"></i> <span data-i18n="nav.add_database">新增資料庫</span>
                     </a>
                 </div>
             </div>
@@ -267,6 +286,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/translations.js') }}"></script>
 </body>
 </html>
 

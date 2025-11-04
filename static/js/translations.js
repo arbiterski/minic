@@ -48,6 +48,72 @@ const translations = {
         'resources.coming_soon': '即將開放',
         'resources.github': 'GitHub',
 
+        // Database Detail Page Labels
+        'detail.open_access': '開放存取',
+        'detail.restricted_access': '限制存取',
+        'detail.published_date': '發布日期',
+        'detail.version': '版本',
+        'detail.cite_resource': '引用此資源時，請引用：',
+        'detail.apa_format': 'APA 格式',
+        'detail.mla_format': 'MLA 格式',
+        'detail.chicago_format': 'Chicago 格式',
+        'detail.harvard_format': 'Harvard 格式',
+        'detail.vancouver_format': 'Vancouver 格式',
+        'detail.abstract': '摘要',
+        'detail.background': '背景',
+        'detail.methods': '方法',
+        'detail.data_description': '資料描述',
+        'detail.data_files': '資料檔案：',
+        'detail.records': '筆記錄',
+        'detail.usage_notes': '使用說明',
+        'detail.release_notes': '發布說明',
+        'detail.ethics': '倫理',
+        'detail.acknowledgments': '致謝',
+        'detail.conflicts': '利益衝突',
+        'detail.references': '參考文獻',
+        'detail.view_paper': '查看論文',
+        'detail.files_downloads': '檔案和下載',
+        'detail.download_full': '下載完整資料集',
+        'detail.download_anonymized': '下載去識別化資料',
+        'detail.view_on_github': '在 GitHub 上查看',
+        'detail.access_policy': '存取政策',
+        'detail.license': '授權條款',
+        'detail.topics': '主題',
+        'detail.share': '分享',
+        'detail.access': '存取',
+        'detail.access_policy_label': '存取政策：',
+        'detail.license_label': '授權 (檔案)：',
+        'detail.discovery': '發現',
+        'detail.doi': 'DOI (最新版本)：',
+        'detail.topics_label': '主題：',
+        'detail.project_website': '專案網站：',
+        'detail.files': '檔案',
+        'detail.total_size': '總未壓縮大小',
+        'detail.access_files': '存取檔案',
+        'detail.download_zip': '下載 ZIP 檔案',
+        'detail.terminal_download': '使用終端機下載檔案：',
+        'detail.aws_download': '使用 AWS 命令列工具下載檔案，請先配置您的 AWS 憑證。',
+        'detail.versions': '版本',
+        'detail.corresponding_member': '通訊作者',
+        'detail.contact': '聯絡',
+        'detail.share_title': '分享',
+
+        // Footer
+        'footer.platform_desc': '臺北醫學大學神經學研究資料庫平台',
+        'footer.platform_subdesc': '整合多個神經學研究資料庫，促進神經科學研究發展',
+        'footer.explore_title': '探索',
+        'footer.databases': '資料庫',
+        'footer.software': '軟體',
+        'footer.tutorials': '教學',
+        'footer.challenges': '挑戰',
+        'footer.contact_title': '聯絡資訊',
+        'footer.copyright': '臺北醫學大學 神經學研究資料庫平台 | 參考',
+        'footer.design_ref': '設計，品牌為 Minic',
+        'footer.explore_resources': '探索資源',
+        'footer.share_database': '分享資料庫',
+        'footer.about_platform': '關於平台',
+        'footer.database_details': '資料庫詳情',
+
         // Database 1: Dementia
         'db1.badge_type': '資料庫',
         'db1.badge_access': '開放存取',
@@ -59,6 +125,37 @@ const translations = {
         'db1.publication_title': 'Heterogeneity of Alzheimer\'s disease identified by neuropsychological test profiling',
         'db1.publication_citation': 'Nguyen TTT, Lee HH, Huang LK, et al. PLoS One. 2023;18(10):e0292527.',
         'db1.publication_description': '本研究採用神經心理測試分析識別阿茲海默症的異質性，使用機器學習方法進行認知亞型分群分析。',
+
+        // Database 1 Content (Dynamic)
+        'db1.abstract_content': '這項研究採用臺北醫學大學雙和醫院失智症中心與神經內科的受試者資料，建立了以阿茲海默症患者為核心的臨床資料庫。該資料庫收錄符合美國國家老化研究院-阿茲海默症協會(NIA-AA)標準的疑似AD患者，收集的內容包含病歷、神經心理評估（如MMSE、CASI、CDR）、持續多年的追蹤數據及部分患者的腦部MRI影像。所有數據經過嚴格去識別化處理，並遵照研究倫理規範，包含人口統計、病程、教育年數、神經心理多領域測驗分數、臨床失智嚴重度、腦萎縮與白質病灶評分等詳細變項。',
+        'db1.background_content': '該資料庫的患者涵蓋輕至中度阿茲海默症，具備多次年度評估紀錄與完整隨訪資料。研究團隊將神經心理評估各面向結合機器學習方法進行異質性分類，促進亞型分群分析。',
+        'db1.methods_content': '資料收集採用標準化神經心理評估工具，包括MMSE、CASI、CDR等量表。所有數據經過嚴格去識別化處理，確保患者隱私保護。',
+        'db1.data_description_content': '資料庫包含多個CSV檔案，涵蓋患者基本資訊、診斷結果、認知測試分數、腦部影像評分等。',
+        'db1.usage_notes_content': '本資料庫僅供研究使用，使用者需遵守相關倫理規範和資料使用協議。',
+        'db1.release_notes_content': '初始版本包含2012-2024年收案資料，經過去識別化處理後發布。',
+        'db1.ethics_content': '本研究已通過臺北醫學大學人體試驗委員會審查，所有參與者均簽署知情同意書，所有參與者均可自動退出。',
+        'db1.acknowledgments_content': '感謝所有參與研究的患者及其家屬，以及研究團隊成員的貢獻。',
+        'db1.conflicts_content': '研究團隊聲明無利益衝突。',
+
+        // Database 1 Tags
+        'tag.alzheimers': '阿茲海默症',
+        'tag.neuropsych': '神經心理評估',
+        'tag.mmse': 'MMSE',
+        'tag.casi': 'CASI',
+        'tag.cdr': 'CDR',
+        'tag.brain_mri': '腦部MRI',
+        'tag.machine_learning': '機器學習',
+        'tag.heterogeneity': '異質性分析',
+
+        // Database 2 Tags
+        'tag.consciousness': '意識研究',
+        'tag.eeg': '腦電圖',
+        'tag.fmri': 'fMRI',
+        'tag.multimodal': '多模態',
+
+        // Database 3 Tags
+        'tag.python': 'Python',
+        'tag.neuroimaging': '神經影像',
 
         // Database 2: Consciousness
         'db2.badge_type': '資料庫',
@@ -169,6 +266,72 @@ const translations = {
         'resources.coming_soon': 'Coming Soon',
         'resources.github': 'GitHub',
 
+        // Database Detail Page Labels
+        'detail.open_access': 'Open Access',
+        'detail.restricted_access': 'Restricted Access',
+        'detail.published_date': 'Published',
+        'detail.version': 'Version',
+        'detail.cite_resource': 'When citing this resource, please cite:',
+        'detail.apa_format': 'APA Format',
+        'detail.mla_format': 'MLA Format',
+        'detail.chicago_format': 'Chicago Format',
+        'detail.harvard_format': 'Harvard Format',
+        'detail.vancouver_format': 'Vancouver Format',
+        'detail.abstract': 'Abstract',
+        'detail.background': 'Background',
+        'detail.methods': 'Methods',
+        'detail.data_description': 'Data Description',
+        'detail.data_files': 'Data Files:',
+        'detail.records': 'records',
+        'detail.usage_notes': 'Usage Notes',
+        'detail.release_notes': 'Release Notes',
+        'detail.ethics': 'Ethics',
+        'detail.acknowledgments': 'Acknowledgments',
+        'detail.conflicts': 'Conflicts of Interest',
+        'detail.references': 'References',
+        'detail.view_paper': 'View Paper',
+        'detail.files_downloads': 'Files and Downloads',
+        'detail.download_full': 'Download Full Dataset',
+        'detail.download_anonymized': 'Download Anonymized Data',
+        'detail.view_on_github': 'View on GitHub',
+        'detail.access_policy': 'Access Policy',
+        'detail.license': 'License',
+        'detail.topics': 'Topics',
+        'detail.share': 'Share',
+        'detail.access': 'Access',
+        'detail.access_policy_label': 'Access Policy:',
+        'detail.license_label': 'License (for files):',
+        'detail.discovery': 'Discovery',
+        'detail.doi': 'DOI (latest version):',
+        'detail.topics_label': 'Topics:',
+        'detail.project_website': 'Project Website:',
+        'detail.files': 'Files',
+        'detail.total_size': 'Total uncompressed size',
+        'detail.access_files': 'Access the files',
+        'detail.download_zip': 'Download the ZIP file',
+        'detail.terminal_download': 'Download the files using your terminal:',
+        'detail.aws_download': 'Download the files using the AWS Command Line Interface, please configure your AWS credentials first.',
+        'detail.versions': 'Versions',
+        'detail.corresponding_member': 'Corresponding Member',
+        'detail.contact': 'Contact',
+        'detail.share_title': 'Share',
+
+        // Footer
+        'footer.platform_desc': 'Taipei Medical University Neurology Research Database Platform',
+        'footer.platform_subdesc': 'Integrating multiple neurology research databases to advance neuroscience research',
+        'footer.explore_title': 'Explore',
+        'footer.databases': 'Databases',
+        'footer.software': 'Software',
+        'footer.tutorials': 'Tutorials',
+        'footer.challenges': 'Challenges',
+        'footer.contact_title': 'Contact',
+        'footer.copyright': 'Taipei Medical University Neurology Research Database Platform | Inspired by',
+        'footer.design_ref': 'design, branded as Minic',
+        'footer.explore_resources': 'Explore Resources',
+        'footer.share_database': 'Share Database',
+        'footer.about_platform': 'About Platform',
+        'footer.database_details': 'Database Details',
+
         // Database 1: Dementia
         'db1.badge_type': 'Database',
         'db1.badge_access': 'Open Access',
@@ -180,6 +343,37 @@ const translations = {
         'db1.publication_title': 'Heterogeneity of Alzheimer\'s disease identified by neuropsychological test profiling',
         'db1.publication_citation': 'Nguyen TTT, Lee HH, Huang LK, et al. PLoS One. 2023;18(10):e0292527.',
         'db1.publication_description': 'This study uses neuropsychological test analysis to identify heterogeneity in Alzheimer\'s disease, employing machine learning methods for cognitive subtype clustering analysis.',
+
+        // Database 1 Content (Dynamic)
+        'db1.abstract_content': 'This study utilizes patient data from the Dementia Center and Department of Neurology at Taipei Medical University\'s Shuang Ho Hospital to establish a clinical database centered on Alzheimer\'s disease (AD) patients. The database includes suspected AD patients who meet the National Institute on Aging-Alzheimer\'s Association (NIA-AA) criteria. Collected data encompasses medical records, neuropsychological assessments (such as MMSE, CASI, CDR), multi-year follow-up data, and brain MRI images for some patients. All data has undergone strict de-identification and complies with research ethics standards, including detailed variables such as demographics, disease course, years of education, neuropsychological multi-domain test scores, clinical dementia severity, brain atrophy and white matter lesion scores.',
+        'db1.background_content': 'The database includes patients with mild to moderate Alzheimer\'s disease, with multiple annual assessment records and complete follow-up data. The research team combines various aspects of neuropsychological assessment with machine learning methods for heterogeneity classification, promoting subtype clustering analysis.',
+        'db1.methods_content': 'Data collection employs standardized neuropsychological assessment tools, including MMSE, CASI, CDR and other scales. All data has undergone strict de-identification to ensure patient privacy protection.',
+        'db1.data_description_content': 'The database contains multiple CSV files, covering patient basic information, diagnostic results, cognitive test scores, brain imaging scores, etc.',
+        'db1.usage_notes_content': 'This database is for research use only. Users must comply with relevant ethical standards and data use agreements.',
+        'db1.release_notes_content': 'Initial version contains data collected from 2012-2024, published after de-identification processing.',
+        'db1.ethics_content': 'This study has been approved by the Taipei Medical University Institutional Review Board. All participants signed informed consent forms and can withdraw at any time.',
+        'db1.acknowledgments_content': 'We thank all patients and their families who participated in the research, as well as the contributions of research team members.',
+        'db1.conflicts_content': 'The research team declares no conflicts of interest.',
+
+        // Database 1 Tags
+        'tag.alzheimers': 'Alzheimer\'s Disease',
+        'tag.neuropsych': 'Neuropsychological Assessment',
+        'tag.mmse': 'MMSE',
+        'tag.casi': 'CASI',
+        'tag.cdr': 'CDR',
+        'tag.brain_mri': 'Brain MRI',
+        'tag.machine_learning': 'Machine Learning',
+        'tag.heterogeneity': 'Heterogeneity Analysis',
+
+        // Database 2 Tags
+        'tag.consciousness': 'Consciousness Research',
+        'tag.eeg': 'EEG',
+        'tag.fmri': 'fMRI',
+        'tag.multimodal': 'Multimodal',
+
+        // Database 3 Tags
+        'tag.python': 'Python',
+        'tag.neuroimaging': 'Neuroimaging',
 
         // Database 2: Consciousness
         'db2.badge_type': 'Database',
@@ -290,6 +484,7 @@ class LanguageManager {
     }
 
     updateTranslations() {
+        // 處理 data-i18n 屬性（UI 標籤）
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(element => {
             const key = element.getAttribute('data-i18n');
@@ -313,6 +508,18 @@ class LanguageManager {
             const translation = this.getTranslation(key);
             if (translation) {
                 option.textContent = translation;
+            }
+        });
+
+        // 處理 data-content-key 屬性（動態內容）
+        const contentElements = document.querySelectorAll('[data-content-key]');
+        console.log('Found content elements:', contentElements.length);
+        contentElements.forEach(element => {
+            const key = element.getAttribute('data-content-key');
+            const translation = this.getTranslation(key);
+            console.log('Translating content key:', key, '→', translation ? translation.substring(0, 50) + '...' : 'NOT FOUND');
+            if (translation) {
+                element.textContent = translation;
             }
         });
     }

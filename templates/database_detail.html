@@ -61,15 +61,15 @@
         <div class="row mb-4">
             <div class="col-12">
                 <div class="resource-header mb-3">
-                    <span class="badge bg-primary me-2">{{ database.type }}</span>
-                    <span class="badge bg-{{ 'success' if database.access == 'open' else 'warning' }}">
+                    <span class="badge bg-primary me-2" data-i18n="db1.badge_type">{{ database.type }}</span>
+                    <span class="badge bg-{{ 'success' if database.access == 'open' else 'warning' }}" data-i18n="{% if database.access == 'open' %}detail.open_access{% else %}detail.restricted_access{% endif %}">
                         {{ '開放存取' if database.access == 'open' else '限制存取' }}
                     </span>
                 </div>
-                <h1 class="display-4 mb-3">{{ database.title }}</h1>
-                <p class="lead mb-2">{{ database.authors }}</p>
+                <h1 class="display-4 mb-3" id="database-title" data-i18n="db1.title">{{ database.title }}</h1>
+                <p class="lead mb-2" id="database-authors" data-i18n="db1.authors">{{ database.authors }}</p>
                 <p class="text-muted mb-3">
-                    發布日期: {{ database.published_date }} | 版本: {{ database.version }}
+                    <span data-i18n="detail.published_date">發布日期</span>: {{ database.published_date }} | <span data-i18n="detail.version">版本</span>: {{ database.version }}
                 </p>
             </div>
         </div>
@@ -79,27 +79,27 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-quote-right"></i> 引用此資源時，請引用：</h5>
+                        <h5><i class="fas fa-quote-right"></i> <span data-i18n="detail.cite_resource">引用此資源時，請引用：</span></h5>
                     </div>
                     <div class="card-body">
                         <div class="citation-box p-3 mb-3">
-                            <h6>APA 格式</h6>
+                            <h6 data-i18n="detail.apa_format">APA 格式</h6>
                             <p>{{ database.citation_apa }}</p>
                         </div>
                         <div class="citation-box p-3 mb-3">
-                            <h6>MLA 格式</h6>
+                            <h6 data-i18n="detail.mla_format">MLA 格式</h6>
                             <p>{{ database.citation_mla }}</p>
                         </div>
                         <div class="citation-box p-3 mb-3">
-                            <h6>Chicago 格式</h6>
+                            <h6 data-i18n="detail.chicago_format">Chicago 格式</h6>
                             <p>{{ database.citation_chicago }}</p>
                         </div>
                         <div class="citation-box p-3 mb-3">
-                            <h6>Harvard 格式</h6>
+                            <h6 data-i18n="detail.harvard_format">Harvard 格式</h6>
                             <p>{{ database.citation_harvard }}</p>
                         </div>
                         <div class="citation-box p-3">
-                            <h6>Vancouver 格式</h6>
+                            <h6 data-i18n="detail.vancouver_format">Vancouver 格式</h6>
                             <p>{{ database.citation_vancouver }}</p>
                         </div>
                     </div>
@@ -113,50 +113,50 @@
                 <!-- 摘要 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-info-circle"></i> 摘要</h5>
+                        <h5><i class="fas fa-info-circle"></i> <span data-i18n="detail.abstract">摘要</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.abstract }}</p>
+                        <p data-content-key="db1.abstract_content">{{ database.abstract }}</p>
                     </div>
                 </div>
 
                 <!-- 背景 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-book"></i> 背景</h5>
+                        <h5><i class="fas fa-book"></i> <span data-i18n="detail.background">背景</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.background }}</p>
+                        <p data-content-key="db1.background_content">{{ database.background }}</p>
                     </div>
                 </div>
 
                 <!-- 方法 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-cogs"></i> 方法</h5>
+                        <h5><i class="fas fa-cogs"></i> <span data-i18n="detail.methods">方法</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.methods }}</p>
+                        <p data-content-key="db1.methods_content">{{ database.methods }}</p>
                     </div>
                 </div>
 
                 <!-- 資料描述 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-database"></i> 資料描述</h5>
+                        <h5><i class="fas fa-database"></i> <span data-i18n="detail.data_description">資料描述</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.data_description }}</p>
-                        
+                        <p data-content-key="db1.data_description_content">{{ database.data_description }}</p>
+
                         {% if database.data_files %}
-                        <h6 class="mt-3">資料檔案：</h6>
+                        <h6 class="mt-3" data-i18n="detail.data_files">資料檔案：</h6>
                         <ul class="list-group">
                             {% for file in database.data_files %}
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>
                                     <i class="fas fa-file-csv text-primary"></i> {{ file.name }}
                                 </span>
-                                <span class="badge bg-info rounded-pill">{{ file.records }} 筆記錄</span>
+                                <span class="badge bg-info rounded-pill">{{ file.records }} <span data-i18n="detail.records">筆記錄</span></span>
                             </li>
                             {% endfor %}
                         </ul>
@@ -167,57 +167,57 @@
                 <!-- 使用說明 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-user-guide"></i> 使用說明</h5>
+                        <h5><i class="fas fa-user-guide"></i> <span data-i18n="detail.usage_notes">使用說明</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.usage_notes }}</p>
+                        <p data-content-key="db1.usage_notes_content">{{ database.usage_notes }}</p>
                     </div>
                 </div>
 
                 <!-- 發布說明 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-code-branch"></i> 發布說明</h5>
+                        <h5><i class="fas fa-code-branch"></i> <span data-i18n="detail.release_notes">發布說明</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.release_notes }}</p>
+                        <p data-content-key="db1.release_notes_content">{{ database.release_notes }}</p>
                     </div>
                 </div>
 
                 <!-- 倫理 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-balance-scale"></i> 倫理</h5>
+                        <h5><i class="fas fa-balance-scale"></i> <span data-i18n="detail.ethics">倫理</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.ethics }}</p>
+                        <p data-content-key="db1.ethics_content">{{ database.ethics }}</p>
                     </div>
                 </div>
 
                 <!-- 致謝 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-heart"></i> 致謝</h5>
+                        <h5><i class="fas fa-heart"></i> <span data-i18n="detail.acknowledgments">致謝</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.acknowledgements }}</p>
+                        <p data-content-key="db1.acknowledgments_content">{{ database.acknowledgements }}</p>
                     </div>
                 </div>
 
                 <!-- 利益衝突 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-exclamation-triangle"></i> 利益衝突</h5>
+                        <h5><i class="fas fa-exclamation-triangle"></i> <span data-i18n="detail.conflicts">利益衝突</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ database.conflicts_of_interest }}</p>
+                        <p data-content-key="db1.conflicts_content">{{ database.conflicts_of_interest }}</p>
                     </div>
                 </div>
 
                 <!-- 參考文獻 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-book-open"></i> 參考文獻</h5>
+                        <h5><i class="fas fa-book-open"></i> <span data-i18n="detail.references">參考文獻</span></h5>
                     </div>
                     <div class="card-body">
                         <ol>
@@ -228,7 +228,7 @@
                                     {% set text_part = parts[0] %}
                                     {% set url_part = 'https://' + parts[1] %}
                                     {{ text_part }}<a href="{{ url_part }}" target="_blank" class="text-decoration-none ms-1">
-                                        <i class="fas fa-external-link-alt"></i> 查看論文
+                                        <i class="fas fa-external-link-alt"></i> <span data-i18n="detail.view_paper">查看論文</span>
                                     </a>
                                 {% else %}
                                     {{ reference }}
@@ -244,13 +244,13 @@
                 <!-- 存取 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-key"></i> 存取</h5>
+                        <h5><i class="fas fa-key"></i> <span data-i18n="detail.access">存取</span></h5>
                     </div>
                     <div class="card-body">
-                        <p><strong>存取政策：</strong></p>
+                        <p><strong data-i18n="detail.access_policy_label">存取政策：</strong></p>
                         <p>{{ database.access_policy }}</p>
-                        
-                        <p><strong>授權 (檔案)：</strong></p>
+
+                        <p><strong data-i18n="detail.license_label">授權 (檔案)：</strong></p>
                         <p>{{ database.license }}</p>
                     </div>
                 </div>
@@ -258,23 +258,23 @@
                 <!-- 發現 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-search"></i> 發現</h5>
+                        <h5><i class="fas fa-search"></i> <span data-i18n="detail.discovery">發現</span></h5>
                     </div>
                     <div class="card-body">
                         {% if database.doi %}
-                        <p><strong>DOI (最新版本)：</strong></p>
+                        <p><strong data-i18n="detail.doi">DOI (最新版本)：</strong></p>
                         <p><a href="{{ database.doi }}" target="_blank">{{ database.doi }}</a></p>
                         {% endif %}
-                        
-                        <p><strong>主題：</strong></p>
+
+                        <p><strong data-i18n="detail.topics_label">主題：</strong></p>
                         <div class="mb-2">
                             {% for topic in database.topics %}
                             <span class="badge bg-light text-dark me-1">{{ topic }}</span>
                             {% endfor %}
                         </div>
-                        
+
                         {% if database.project_website %}
-                        <p><strong>專案網站：</strong></p>
+                        <p><strong data-i18n="detail.project_website">專案網站：</strong></p>
                         <p><a href="{{ database.project_website }}" target="_blank">{{ database.project_website }}</a></p>
                         {% endif %}
                     </div>
@@ -283,23 +283,23 @@
                 <!-- 檔案 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-folder"></i> 檔案</h5>
+                        <h5><i class="fas fa-folder"></i> <span data-i18n="detail.files">檔案</span></h5>
                     </div>
                     <div class="card-body">
-                        <p>總未壓縮大小: {{ database.total_size }}.</p>
-                        
-                        <h6>存取檔案</h6>
+                        <p><span data-i18n="detail.total_size">總未壓縮大小</span>: {{ database.total_size }}.</p>
+
+                        <h6 data-i18n="detail.access_files">存取檔案</h6>
                         <div class="mb-3">
                             <a href="{{ database.download_url }}" class="btn btn-primary btn-sm w-100 mb-2">
-                                <i class="fas fa-download"></i> 下載 ZIP 檔案 ({{ database.zip_size }})
+                                <i class="fas fa-download"></i> <span data-i18n="detail.download_zip">下載 ZIP 檔案</span> ({{ database.zip_size }})
                             </a>
                         </div>
-                        
-                        <p>使用終端機下載檔案：</p>
+
+                        <p data-i18n="detail.terminal_download">使用終端機下載檔案：</p>
                         <pre class="bg-light p-2"><code>{{ database.wget_command }}</code></pre>
-                        
+
                         {% if database.aws_command %}
-                        <p class="mt-2">使用 AWS 命令列工具下載檔案，請先配置您的 AWS 憑證。</p>
+                        <p class="mt-2" data-i18n="detail.aws_download">使用 AWS 命令列工具下載檔案，請先配置您的 AWS 憑證。</p>
                         {% endif %}
                     </div>
                 </div>
@@ -307,7 +307,7 @@
                 <!-- 版本 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-tags"></i> 版本</h5>
+                        <h5><i class="fas fa-tags"></i> <span data-i18n="detail.versions">版本</span></h5>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled">
@@ -323,7 +323,7 @@
                 <!-- 分享 -->
                 <div class="card mb-4">
                     <div class="card-header bg-light">
-                        <h5><i class="fas fa-share-alt"></i> 分享</h5>
+                        <h5><i class="fas fa-share-alt"></i> <span data-i18n="detail.share_title">分享</span></h5>
                     </div>
                     <div class="card-body">
                         <div class="d-grid gap-2">
@@ -349,20 +349,20 @@
             <div class="row">
                 <div class="col-md-4">
                     <h5>Minic</h5>
-                    <p>臺北醫學大學神經學研究資料庫平台</p>
-                    <p class="text-muted">整合多個神經學研究資料庫，促進神經科學研究發展</p>
+                    <p data-i18n="footer.platform_desc">臺北醫學大學神經學研究資料庫平台</p>
+                    <p class="text-muted" data-i18n="footer.platform_subdesc">整合多個神經學研究資料庫，促進神經科學研究發展</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>探索</h5>
+                    <h5 data-i18n="footer.explore_title">探索</h5>
                     <ul class="list-unstyled">
-                        <li><a href="/#data">資料庫</a></li>
-                        <li><a href="/#software">軟體</a></li>
-                        <li><a href="/#tutorials">教學</a></li>
-                        <li><a href="/#challenges">挑戰</a></li>
+                        <li><a href="/#data" data-i18n="footer.databases">資料庫</a></li>
+                        <li><a href="/#software" data-i18n="footer.software">軟體</a></li>
+                        <li><a href="/#tutorials" data-i18n="footer.tutorials">教學</a></li>
+                        <li><a href="/#challenges" data-i18n="footer.challenges">挑戰</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5>聯絡資訊</h5>
+                    <h5 data-i18n="footer.contact_title">聯絡資訊</h5>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-envelope"></i> neurology@tmu.edu.tw</li>
                         <li><i class="fas fa-phone"></i> +886-2-2736-1661</li>
