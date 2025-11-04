@@ -21,18 +21,37 @@
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">關於</a>
+                        <a class="nav-link" href="/about" data-i18n="nav.about">關於</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#explore">探索</a>
+                        <a class="nav-link" href="#explore" data-i18n="nav.explore">探索</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#share">分享</a>
+                        <a class="nav-link" href="#share" data-i18n="nav.share">分享</a>
                     </li>
                 </ul>
                 <div class="navbar-nav">
+                    <!-- Language Switcher -->
+                    <div class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i>
+                            <span id="currentLang">中文</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="#" data-lang="zh-TW">
+                                    🇹🇼 繁體中文
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-lang="en">
+                                    🇺🇸 English
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <a class="nav-link" href="#add-database">
-                        <i class="fas fa-plus"></i> 新增資料庫
+                        <i class="fas fa-plus"></i> <span data-i18n="nav.add_database">新增資料庫</span>
                     </a>
                 </div>
             </div>
@@ -44,16 +63,16 @@
         <!-- 標題和搜尋區域 -->
         <div class="row mb-4">
             <div class="col-12 text-center">
-                <h1 class="display-4 mb-3">臺北醫學大學 神經學研究資料庫平台</h1>
-                <p class="lead mb-4">整合多個神經學研究資料庫，提供研究人員資料存取、分析工具和合作平台</p>
-                
+                <h1 class="display-4 mb-3" data-i18n="hero.title">臺北醫學大學 神經學研究資料庫平台</h1>
+                <p class="lead mb-4" data-i18n="hero.subtitle">整合多個神經學研究資料庫，提供研究人員資料存取、分析工具和合作平台</p>
+
                 <!-- 搜尋表單 -->
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <form class="d-flex" id="searchForm">
-                            <input class="form-control form-control-lg me-2" type="search" placeholder="搜尋資料庫..." aria-label="Search" id="searchInput">
+                            <input class="form-control form-control-lg me-2" type="search" placeholder="搜尋資料庫..." aria-label="Search" id="searchInput" data-i18n="hero.search_placeholder">
                             <button class="btn btn-primary btn-lg" type="submit">
-                                <i class="fas fa-search"></i> 搜尋
+                                <i class="fas fa-search"></i> <span data-i18n="hero.search_button">搜尋</span>
                             </button>
                         </form>
                     </div>
@@ -70,13 +89,13 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h5 class="mb-3">資源類型</h5>
+                                <h5 class="mb-3" data-i18n="filter.resource_type">資源類型</h5>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="data" id="dataCheck" checked>
                                             <label class="form-check-label" for="dataCheck">
-                                                <i class="fas fa-database"></i> 資料庫
+                                                <i class="fas fa-database"></i> <span data-i18n="filter.database">資料庫</span>
                                             </label>
                                         </div>
                                     </div>
@@ -84,7 +103,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="software" id="softwareCheck">
                                             <label class="form-check-label" for="softwareCheck">
-                                                <i class="fas fa-code"></i> 軟體
+                                                <i class="fas fa-code"></i> <span data-i18n="filter.software">軟體</span>
                                             </label>
                                         </div>
                                     </div>
@@ -92,7 +111,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="tutorial" id="tutorialCheck">
                                             <label class="form-check-label" for="tutorialCheck">
-                                                <i class="fas fa-graduation-cap"></i> 教學
+                                                <i class="fas fa-graduation-cap"></i> <span data-i18n="filter.tutorial">教學</span>
                                             </label>
                                         </div>
                                     </div>
@@ -100,40 +119,40 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="challenge" id="challengeCheck">
                                             <label class="form-check-label" for="challengeCheck">
-                                                <i class="fas fa-trophy"></i> 挑戰
+                                                <i class="fas fa-trophy"></i> <span data-i18n="filter.challenge">挑戰</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="mb-3">存取權限</h5>
+                                <h5 class="mb-3" data-i18n="filter.access">存取權限</h5>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="open" id="openCheck" checked>
                                     <label class="form-check-label" for="openCheck">
-                                        <i class="fas fa-unlock"></i> 開放存取
+                                        <i class="fas fa-unlock"></i> <span data-i18n="filter.open_access">開放存取</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="restricted" id="restrictedCheck">
                                     <label class="form-check-label" for="restrictedCheck">
-                                        <i class="fas fa-lock"></i> 限制存取
+                                        <i class="fas fa-lock"></i> <span data-i18n="filter.restricted_access">限制存取</span>
                                     </label>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="mb-3">排序方式</h5>
+                                <h5 class="mb-3" data-i18n="filter.sort_by">排序方式</h5>
                                 <select class="form-select" id="sortSelect">
-                                    <option value="relevance">相關性</option>
-                                    <option value="latest">最新</option>
-                                    <option value="oldest">最舊</option>
-                                    <option value="title_asc">標題 (升序)</option>
-                                    <option value="title_desc">標題 (降序)</option>
-                                    <option value="size_asc">大小 (升序)</option>
-                                    <option value="size_desc">大小 (降序)</option>
+                                    <option value="relevance" data-i18n="filter.relevance">相關性</option>
+                                    <option value="latest" data-i18n="filter.latest">最新</option>
+                                    <option value="oldest" data-i18n="filter.oldest">最舊</option>
+                                    <option value="title_asc" data-i18n="filter.title_asc">標題 (升序)</option>
+                                    <option value="title_desc" data-i18n="filter.title_desc">標題 (降序)</option>
+                                    <option value="size_asc" data-i18n="filter.size_asc">大小 (升序)</option>
+                                    <option value="size_desc" data-i18n="filter.size_desc">大小 (降序)</option>
                                 </select>
                                 <button class="btn btn-primary mt-2 w-100" id="applyFilters">
-                                    <i class="fas fa-filter"></i> 套用篩選
+                                    <i class="fas fa-filter"></i> <span data-i18n="filter.apply">套用篩選</span>
                                 </button>
                             </div>
                         </div>
@@ -421,6 +440,29 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/translations.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script>
+        // 更新語言切換按鈕顯示文字
+        document.addEventListener('DOMContentLoaded', () => {
+            const langButtons = document.querySelectorAll('[data-lang]');
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const lang = button.getAttribute('data-lang');
+                    const currentLangSpan = document.getElementById('currentLang');
+                    if (currentLangSpan) {
+                        currentLangSpan.textContent = lang === 'zh-TW' ? '中文' : 'English';
+                    }
+                });
+            });
+
+            // 設定初始語言顯示
+            const savedLang = localStorage.getItem('language') || 'zh-TW';
+            const currentLangSpan = document.getElementById('currentLang');
+            if (currentLangSpan) {
+                currentLangSpan.textContent = savedLang === 'zh-TW' ? '中文' : 'English';
+            }
+        });
+    </script>
 </body>
 </html>
