@@ -108,7 +108,7 @@ docker run -p 5001:5001 minic
 
 ## 聯絡資訊
 
-- **平台管理**：neurology@tmu.edu.tw
+- **平台管理**：arbiter@tmu.edu.tw
 - **電話**：+886-2-2736-1661
 - **地址**：臺北市信義區吳興街250號
 
