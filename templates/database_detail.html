@@ -21,15 +21,36 @@
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">首頁</a>
+                        <a class="nav-link" href="/" data-i18n="nav.home">首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#about">關於</a>
+                        <a class="nav-link" href="/about" data-i18n="nav.about">關於</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#explore">探索</a>
+                        <a class="nav-link" href="#explore" data-i18n="nav.explore">探索</a>
                     </li>
                 </ul>
+                <div class="navbar-nav">
+                    <!-- Language Switcher -->
+                    <div class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i>
+                            <span id="currentLang">中文</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="#" data-lang="zh-TW">
+                                    🇹🇼 繁體中文
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-lang="en">
+                                    🇺🇸 English
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -374,6 +395,26 @@
             const title = "{{ database.title }}";
             window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`);
         }
+    </script>
+    <script src="{{ url_for('static', filename='js/translations.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langButtons = document.querySelectorAll('[data-lang]');
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const lang = button.getAttribute('data-lang');
+                    const currentLangSpan = document.getElementById('currentLang');
+                    if (currentLangSpan) {
+                        currentLangSpan.textContent = lang === 'zh-TW' ? '中文' : 'English';
+                    }
+                });
+            });
+            const savedLang = localStorage.getItem('language') || 'zh-TW';
+            const currentLangSpan = document.getElementById('currentLang');
+            if (currentLangSpan) {
+                currentLangSpan.textContent = savedLang === 'zh-TW' ? '中文' : 'English';
+            }
+        });
     </script>
 </body>
 </html>

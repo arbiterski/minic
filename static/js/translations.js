@@ -3,6 +3,7 @@ const translations = {
     'zh-TW': {
         // Navbar
         'nav.brand': 'Minic',
+        'nav.home': '首頁',
         'nav.about': '關於',
         'nav.explore': '探索',
         'nav.share': '分享',
@@ -123,6 +124,7 @@ const translations = {
     'en': {
         // Navbar
         'nav.brand': 'Minic',
+        'nav.home': 'Home',
         'nav.about': 'About',
         'nav.explore': 'Explore',
         'nav.share': 'Share',
@@ -252,15 +254,20 @@ class LanguageManager {
         // 設定初始語言
         this.setLanguage(this.currentLang, false);
 
-        // 綁定語言切換按鈕事件
-        document.addEventListener('DOMContentLoaded', () => {
-            const langButtons = document.querySelectorAll('[data-lang]');
-            langButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const lang = button.getAttribute('data-lang');
-                    this.setLanguage(lang);
-                });
+        // 綁定語言切換按鈕事件（不需要再包 DOMContentLoaded，因為外層已經有了）
+        this.bindLanguageSwitchers();
+    }
+
+    bindLanguageSwitchers() {
+        const langButtons = document.querySelectorAll('[data-lang]');
+        console.log('Found language buttons:', langButtons.length);
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = button.getAttribute('data-lang');
+                console.log('Switching to:', lang);
+                this.setLanguage(lang);
             });
         });
     }
@@ -291,9 +298,21 @@ class LanguageManager {
             if (translation) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translation;
+                } else if (element.tagName === 'OPTION') {
+                    element.textContent = translation;
                 } else {
+                    // 對於普通元素，直接設置 textContent
                     element.textContent = translation;
                 }
+            }
+        });
+
+        // 特別處理 select 元素內的 option
+        document.querySelectorAll('select option[data-i18n]').forEach(option => {
+            const key = option.getAttribute('data-i18n');
+            const translation = this.getTranslation(key);
+            if (translation) {
+                option.textContent = translation;
             }
         });
     }

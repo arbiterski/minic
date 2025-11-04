@@ -164,7 +164,7 @@
         <!-- 資源列表 -->
         <div class="row mb-4">
             <div class="col-12">
-                <h2 class="mb-4">資源</h2>
+                <h2 class="mb-4" data-i18n="resources.title">資源</h2>
                 
                 <!-- 臺灣失智症臨床資料庫 -->
                 <div class="card mb-4 resource-card" data-type="data" data-access="open">
@@ -172,19 +172,19 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="resource-header mb-2">
-                                    <span class="badge bg-primary me-2">資料庫</span>
-                                    <span class="badge bg-success">開放存取</span>
+                                    <span class="badge bg-primary me-2" data-i18n="db1.badge_type">資料庫</span>
+                                    <span class="badge bg-success" data-i18n="db1.badge_access">開放存取</span>
                                 </div>
                                 <h3 class="resource-title">
-                                    <a href="/database/dementia" class="text-decoration-none">臺灣失智症臨床資料庫</a>
+                                    <a href="/database/dementia" class="text-decoration-none" data-i18n="db1.title">臺灣失智症臨床資料庫</a>
                                 </h3>
                                 <p class="resource-authors mb-2">
-                                    <strong>臺北醫學大學雙和醫院失智症中心與神經內科研究團隊</strong>
+                                    <strong data-i18n="db1.authors">臺北醫學大學雙和醫院失智症中心與神經內科研究團隊</strong>
                                 </p>
-                                <p class="resource-description">
+                                <p class="resource-description" data-i18n="db1.description_1">
                                     這項研究採用臺北醫學大學雙和醫院失智症中心與神經內科的受試者資料，建立了以阿茲海默症患者為核心的臨床資料庫。該資料庫收錄符合美國國家老化研究院-阿茲海默症協會(NIA-AA)標準的疑似AD患者，收集的內容包含病歷、神經心理評估（如MMSE、CASI、CDR）、持續多年的追蹤數據及部分患者的腦部MRI影像。所有數據經過嚴格去識別化處理，並遵照研究倫理規範，包含人口統計、病程、教育年數、神經心理多領域測驗分數、臨床失智嚴重度、腦萎縮與白質病灶評分等詳細變項。
                                 </p>
-                                <p class="resource-description">
+                                <p class="resource-description" data-i18n="db1.description_2">
                                     該資料庫的患者涵蓋輕至中度阿茲海默症，具備多次年度評估紀錄與完整隨訪資料。研究團隊將神經心理評估各面向結合機器學習方法進行異質性分類，促進亞型分群分析。這樣的資料庫可應用於阿茲海默症異質性研究、疾病進展模式分析、個體化治療標的開發與跨中心橫斷及縱貫研究協作，是台灣區域極具代表性且結構嚴謹的失智症臨床資料資源。
                                 </p>
                                 <div class="resource-tags mb-2">
@@ -199,7 +199,7 @@
                                 </div>
                                 <div class="resource-publications mb-3">
                                     <h6 class="text-primary mb-2">
-                                        <i class="fas fa-file-alt"></i> 相關研究論文
+                                        <i class="fas fa-file-alt"></i> <span data-i18n="db1.publications_title">相關研究論文</span>
                                     </h6>
                                     <div class="publication-item">
                                         <a href="https://pubmed.ncbi.nlm.nih.gov/37797059/" target="_blank" class="text-decoration-none">
@@ -209,7 +209,7 @@
                                         <p class="text-muted small mb-1">
                                             Nguyen TTT, Lee HH, Huang LK, et al. PLoS One. 2023;18(10):e0292527.
                                         </p>
-                                        <p class="text-muted small">
+                                        <p class="text-muted small" data-i18n="db1.publication_description">
                                             本研究採用神經心理測試分析識別阿茲海默症的異質性，使用機器學習方法進行認知亞型分群分析。
                                         </p>
                                     </div>
@@ -217,16 +217,16 @@
                             </div>
                             <div class="col-md-4 text-end">
                                 <div class="resource-meta">
-                                    <p class="text-muted mb-1">發布日期: 2025年8月28日</p>
-                                    <p class="text-muted mb-1">版本: 1.0.0</p>
-                                    <p class="text-muted mb-1">資料期間: 2012-2024</p>
-                                    <p class="text-muted mb-1">評估標準: NIA-AA</p>
-                                    <p class="text-muted mb-3">大小: 213.29 KB</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.published">發布日期</span>: 2025年8月28日</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.version">版本</span>: 1.0.0</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.data_period">資料期間</span>: 2012-2024</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.evaluation_standard">評估標準</span>: NIA-AA</p>
+                                    <p class="text-muted mb-3"><span data-i18n="resources.size">大小</span>: 213.29 KB</p>
                                     <a href="/download/anonymized_csv.zip" class="btn btn-primary btn-sm me-2">
-                                        <i class="fas fa-download"></i> 下載
+                                        <i class="fas fa-download"></i> <span data-i18n="resources.download">下載</span>
                                     </a>
                                     <a href="/database/dementia" class="btn btn-outline-primary btn-sm">
-                                        <i class="fas fa-info-circle"></i> 詳細資訊
+                                        <i class="fas fa-info-circle"></i> <span data-i18n="resources.details">詳細資訊</span>
                                     </a>
                                 </div>
                             </div>
@@ -240,16 +240,16 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="resource-header mb-2">
-                                    <span class="badge bg-primary me-2">資料庫</span>
-                                    <span class="badge bg-warning text-dark">限制存取</span>
+                                    <span class="badge bg-primary me-2" data-i18n="db2.badge_type">資料庫</span>
+                                    <span class="badge bg-warning text-dark" data-i18n="db2.badge_access">限制存取</span>
                                 </div>
                                 <h3 class="resource-title">
-                                    <a href="/database/consciousness" class="text-decoration-none">大腦意識資料庫</a>
+                                    <a href="/database/consciousness" class="text-decoration-none" data-i18n="db2.title">大腦意識資料庫</a>
                                 </h3>
                                 <p class="resource-authors mb-2">
-                                    <strong>臺北醫學大學腦科學研究中心</strong>
+                                    <strong data-i18n="db2.authors">臺北醫學大學腦科學研究中心</strong>
                                 </p>
-                                <p class="resource-description">
+                                <p class="resource-description" data-i18n="db2.description">
                                     研究大腦意識狀態、認知功能和神經可塑性的綜合資料庫，包含腦電圖、功能性磁振造影等多模態資料。專注於意識研究，為神經科學研究提供豐富的數據資源。
                                 </p>
                                 <div class="resource-tags mb-2">
@@ -261,14 +261,14 @@
                             </div>
                             <div class="col-md-4 text-end">
                                 <div class="resource-meta">
-                                    <p class="text-muted mb-1">發布日期: 2025年8月28日</p>
-                                    <p class="text-muted mb-1">版本: 1.0.0</p>
-                                    <p class="text-muted mb-3">狀態: 規劃中</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.published">發布日期</span>: 2025年8月28日</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.version">版本</span>: 1.0.0</p>
+                                    <p class="text-muted mb-3"><span data-i18n="resources.status">狀態</span>: 規劃中</p>
                                     <button class="btn btn-warning btn-sm me-2" disabled>
-                                        <i class="fas fa-clock"></i> 即將開放
+                                        <i class="fas fa-clock"></i> <span data-i18n="resources.coming_soon">即將開放</span>
                                     </button>
                                     <a href="/database/consciousness" class="btn btn-outline-primary btn-sm">
-                                        <i class="fas fa-info-circle"></i> 詳細資訊
+                                        <i class="fas fa-info-circle"></i> <span data-i18n="resources.details">詳細資訊</span>
                                     </a>
                                 </div>
                             </div>
@@ -282,16 +282,16 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="resource-header mb-2">
-                                    <span class="badge bg-info me-2">軟體</span>
-                                    <span class="badge bg-success">開放存取</span>
+                                    <span class="badge bg-info me-2" data-i18n="soft1.badge_type">軟體</span>
+                                    <span class="badge bg-success" data-i18n="soft1.badge_access">開放存取</span>
                                 </div>
                                 <h3 class="resource-title">
-                                    <a href="/software/neuroimaging" class="text-decoration-none">神經影像分析工具包</a>
+                                    <a href="/software/neuroimaging" class="text-decoration-none" data-i18n="soft1.title">神經影像分析工具包</a>
                                 </h3>
                                 <p class="resource-authors mb-2">
-                                    <strong>臺北醫學大學醫學影像實驗室</strong>
+                                    <strong data-i18n="soft1.authors">臺北醫學大學醫學影像實驗室</strong>
                                 </p>
-                                <p class="resource-description">
+                                <p class="resource-description" data-i18n="soft1.description">
                                     專為神經影像分析設計的 Python 工具包，支援腦電圖、功能性磁振造影、擴散張量影像等多種神經影像格式的處理和分析。
                                 </p>
                                 <div class="resource-tags mb-2">
@@ -303,14 +303,14 @@
                             </div>
                             <div class="col-md-4 text-end">
                                 <div class="resource-meta">
-                                    <p class="text-muted mb-1">發布日期: 2025年8月28日</p>
-                                    <p class="text-muted mb-1">版本: 1.0.0</p>
-                                    <p class="text-muted mb-3">語言: Python</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.published">發布日期</span>: 2025年8月28日</p>
+                                    <p class="text-muted mb-1"><span data-i18n="resources.version">版本</span>: 1.0.0</p>
+                                    <p class="text-muted mb-3"><span data-i18n="resources.language">語言</span>: Python</p>
                                     <a href="https://github.com/tmu/neuroimaging-toolkit" class="btn btn-primary btn-sm me-2" target="_blank">
-                                        <i class="fab fa-github"></i> GitHub
+                                        <i class="fab fa-github"></i> <span data-i18n="resources.github">GitHub</span>
                                     </a>
                                     <a href="/software/neuroimaging" class="btn btn-outline-primary btn-sm">
-                                        <i class="fas fa-info-circle"></i> 詳細資訊
+                                        <i class="fas fa-info-circle"></i> <span data-i18n="resources.details">詳細資訊</span>
                                     </a>
                                 </div>
                             </div>

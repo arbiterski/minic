@@ -14,7 +14,7 @@ class MinicPortal {
     init() {
         this.bindEvents();
         this.loadDownloadInfo();
-        this.initializeFilters();
+        // this.initializeFilters(); // 註解掉未實作的函數
     }
 
     bindEvents() {
